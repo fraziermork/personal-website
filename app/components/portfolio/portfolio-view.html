@@ -1,47 +1,46 @@
-<section class="fm-Portfolio">
-  
-  
-  <article 
-  class="fm-Portfolio-piece"
-  data-ng-repeat="piece in portCtrl.pieces"
-  >
-    <h4 
-    class="fm-Portfolio-title"
-    data-ng-bind="piece.title"
-    ></h4>
-    <h6 
-    class="fm-Portfolio-subtitle"
-    data-ng-bind="piece.subtitle"
-    ></h6>
-  
-    <div 
-    class="fm-Portfolio-imageWrapper"
-    data-ng-repeat="image in piece.images"
+<section class="fm-Portfolio container">
+  <div class="row">
+    <article 
+    class="fm-Portfolio-project col-xs-12"
+    data-ng-repeat="project in portCtrl.projects"
     >
-      <img 
-      class="fm-Portfoli-image"
-      data-ng-src="image.source" 
-      alt="image.altText" 
-      />
-    </div>
+      <h4 
+      class="fm-Portfolio-title"
+      data-ng-bind="project.title"
+      ></h4>
+      <h6 
+      class="fm-Portfolio-subtitle"
+      data-ng-bind="project.subtitle"
+      ></h6>
     
-    <div
-    class="fm-Porfolio-body"
-    data-ng-bind="piece.body"
-    ></div>
-  
-  
-    <a 
-    ng-href="{{ piece.deployLink }}"
-    >View Project</a>
+      <div class="fm-Portfolio-bodyWrapper row">
+        <div class="fm-Portfolio-imageWrapper col-xs-12 col-sm-6"
+             data-ng-repeat="image in project.images"
+        >
+          <img class="fm-Portfolio-image"
+               data-ng-src="{{ image.source }}" 
+               alt="image.altText" 
+          />
+        </div>
+        
+        <p class="fm-Porfolio-body"
+           data-ng-bind="project.body"
+        ></p>
+        
+      </div>
+      
     
-    <a 
-    ng-href="{{ piece.githubLink }}"
-    >View Code</a>
+    
+      <a 
+      class="btn btn-primary"
+      ng-href="{{ project.deployLink }}"
+      >View Project</a>
+      
+      <a 
+      class="btn btn-default"
+      ng-href="{{ project.githubLink }}"
+      >View Code</a>
 
-  </article>
-  
-  
-  
-  
+    </article>
+  </div>
 </section>

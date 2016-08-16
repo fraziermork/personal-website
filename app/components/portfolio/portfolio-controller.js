@@ -1,3 +1,5 @@
+const projects = require('../../data/projects');
+
 (function() {
   angular.module('fm.portfolio')
     .controller('PortfolioController', [
@@ -6,8 +8,8 @@
     ]);
   
   function PortfolioController($log) {
-    const vm = this;
-    
+    const vm    = this;
+    vm.projects = projects;
     
   }
     
