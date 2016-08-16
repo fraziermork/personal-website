@@ -1,0 +1,47 @@
+<section class="fm-Portfolio">
+  
+  
+  <article 
+  class="fm-Portfolio-piece"
+  data-ng-repeat="piece in portCtrl.pieces"
+  >
+    <h4 
+    class="fm-Portfolio-title"
+    data-ng-bind="piece.title"
+    ></h4>
+    <h6 
+    class="fm-Portfolio-subtitle"
+    data-ng-bind="piece.subtitle"
+    ></h6>
+  
+    <div 
+    class="fm-Portfolio-imageWrapper"
+    data-ng-repeat="image in piece.images"
+    >
+      <img 
+      class="fm-Portfoli-image"
+      data-ng-src="image.source" 
+      alt="image.altText" 
+      />
+    </div>
+    
+    <div
+    class="fm-Porfolio-body"
+    data-ng-bind="piece.body"
+    ></div>
+  
+  
+    <a 
+    ng-href="{{ piece.deployLink }}"
+    >View Project</a>
+    
+    <a 
+    ng-href="{{ piece.githubLink }}"
+    >View Code</a>
+
+  </article>
+  
+  
+  
+  
+</section>

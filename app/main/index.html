@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="fm.app">
   <head>
     <meta charset="utf-8">
     <title>Frazier Mork</title>
@@ -8,13 +8,15 @@
     <meta name="author" content="Frazier Mork">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="bundle.css" media="screen" title="no title" charset="utf-8">
   </head>
   
   <body role="application">
-    <main ui-view>
-      
-    </main>
+    
+    <fm-header></fm-header>
+    <!-- <fm-navbar></fm-navbar> -->
+    
+    <main ui-view></main>
     
     <script type="text/javascript" src="vendor.js"></script>
     <script type="text/javascript" src="bundle.js"></script>

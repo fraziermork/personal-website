@@ -38,6 +38,7 @@
     "font-awesome": "^4.6.3",
     "html-loader": "^0.4.3",
     "image-webpack-loader": "^2.0.0",
+    "mailgun-js": "^0.7.12",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
     "resolve-url-loader": "^1.6.0",

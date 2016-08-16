@@ -1,13 +1,20 @@
 (function() {
-  angular.module('frazier-app', [
+  angular.module('fm.app', [
     'ui.router',
+    'fm.services',
+    'fm.header',
+    'fm.navbar',
+    'fm.wrapper',
+    'fm.portfolio',
   ])
-  .config(['$stateProvider', config]);
+  .config([
+    '$stateProvider', 
+    '$urlRouterProvider',
+    fmAppConfig,
+  ]);
   
-  function config($stateProvider) {
-    // $stateProvider
-    
-    
+  function fmAppConfig($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/portfolio');
   }
   
 })();

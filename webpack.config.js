@@ -55,7 +55,7 @@ module.exports = {
     preLoaders: [
       {
         // Automatically supply html templates as template to files ending in '-directive'
-        test:   /-directive\.js$/, 
+        test:   /(-directive|-state)\.js$/, 
         loader: 'baggage?[dir]-view.html=template'
       }, 
       {
