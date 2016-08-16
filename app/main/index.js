@@ -3,7 +3,6 @@
     'ui.router',
     'fm.services',
     'fm.header',
-    'fm.navbar',
     'fm.wrapper',
     'fm.portfolio',
   ])

@@ -1,6 +1,10 @@
 <header class="fm-Header"
-        data-ng-class="{ 'is-small': headCtrl.headerIsSmall }"
+        data-ng-class="{ 
+          'is-small':             headCtrl.headerIsSmall, 
+          'is-showingSideNavbar': headCtrl.navVisible,
+        }"
 >
+  <!-- LOGO -->
   <div class="fm-Header-wrapper">
     <svg version="1.1"
          baseProfile="full"
@@ -49,15 +53,60 @@
     </svg>
     <h1 class="fm-Header-title">frazier mork</h1>
   </div>
-  <fm-navbar></fm-navbar>
   
+  <div class="fm-Nav-screen"
+       data-ng-click="headCtrl.toggleNavVisibility()"
+  ></div>
+  <!-- NAVBAR -->
+  <!-- <fm-navbar></fm-navbar> -->
+  <nav class="fm-Nav"
+       id="fm-Nav"
+       data-ng-class="{ 
+        'hidden-xs': !headCtrl.navVisible, 
+        'hidden-sm': !headCtrl.navVisible, 
+       }"
+  >
+    <ul class="fm-Nav-list">
+    
+      <li class="fm-Nav-item"
+          ui-sref-active="is-active"
+      >
+        <a class="fm-Nav-link"
+           ui-sref="portfolio"
+        >portfolio</a>
+      </li>
+      
+      <li class="fm-Nav-item"
+      
+      >
+      <!-- ui-sref-active="is-active" -->
+        <a class="fm-Nav-link"
+        >blog</a>
+      </li> 
+      <!-- ui-sref="blog" -->
+      
+       <li class="fm-Nav-item"
+      >
+      <!-- ui-sref-active="is-active" -->
+        <a class="fm-Nav-link"
+        >about</a>
+        <!-- ui-sref="about" -->
+      </li>
+      
+    </ul>
+  </nav>
+  
+  
+  
+  
+  <!-- HAMBURGER -->
   <!-- TODO: add aria -->
   <button 
   type="button" 
   name="menu"
   class="fm-Header-hamburger btn btn-default" 
   aria-label="menu"
-  data-ng-click="headCtrl.navVisible.toggleNavVisibility()"
+  data-ng-click="headCtrl.toggleNavVisibility()"
   >
     <i class="fa fa-bars"></i>
   </button>
