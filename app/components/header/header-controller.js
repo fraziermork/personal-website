@@ -2,19 +2,22 @@
   angular.module('fm.header')
     .controller('HeaderController', [
       '$log', 
-      'navVisible', 
       HeaderController,
     ]);
   
-  function HeaderController($log, navVisible) {
+  function HeaderController($log) {
     const vm                     = this;
-    vm.navVisible                = navVisible;
     vm.scrollPosToShrinkHeaderAt = 200;
     vm.headerIsSmall             = false;
+    vm.navVisible                = false;
     
+    vm.toggleNavVisibility       = toggleNavVisibility;
   
     
-    
+    function toggleNavVisibility() {
+      vm.navVisible = !vm.navVisible;
+      $log.debug('HeaderController toggleNavVisibility, visibility: ', vm.navVisible);
+    }
   }
   
 })();

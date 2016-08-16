@@ -4,5 +4,4 @@
   ]);
 })();
 
-require('./nav-visible');
 require('./contact-me');

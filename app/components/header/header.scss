@@ -1,16 +1,14 @@
 @import '../../style/fm-variables';
 
-
-
 .fm-Header {
-  height:   $headerHeight;
-  position: relative;
-  
-  &.is-small {
-    height: 50px;
-    
-    
-  }
+  display:          flex;
+  flex-direction:   row;
+  align-items:      center;
+  height:           $headerLgHeight;
+  position:         relative;
+  background-color: white;
+  z-index:          1;
+  // background: linear-gradient(180deg, white, rgba(265, 265, 265, 0));
   
   .fm-Header-wrapper {
     display:        flex;
@@ -32,14 +30,73 @@
     top:      $medGutter;
     right:    $medGutter;
   }
+  .fm-Nav-screen {
+    display: none;
+  }
+  
+  .fm-Nav {
+    position: fixed;
+    bottom:   0;
+    right:    0;
+    
+    .fm-Nav-list {
+      list-style-type: none;
+      padding:         0;
+      
+    }
+    
+    .fm-Nav-item {
+      display: block;
+      float:   none;
+      margin:  $medGutter;
+      
+      &:first-of-type {
+        
+      }
+    }
+    
+    .fm-Nav-link {
+      text-decoration: none;
+    }
+  }
+  
+  // Mobile Only 
+  @media (max-width: $screen-sm-max) {
+    &.is-showingSideNavbar {
+      right: $navBarWidth;
+      
+      .fm-Header-hamburger {
+        right: calc(#{$navBarWidth} + #{$medGutter});
+        // display: none;
+      }
+      
+      .fm-Nav-screen {
+        display:          block;
+        position:         fixed;
+        top:              0;
+        left:             0;
+        right:            0;
+        bottom:           0;
+        // background-color: rgba(0,0,0,.1);
+      }
+      
+    }
+    
+    .fm-Nav {
+      width:            $navBarWidth;
+      background-color: $lightGreyNegative;
+      top:              0;
+      
+    }
+    
+    
+  }
   
   
   
   
+  // Desktop 
   @media (min-width: $screen-md-min) {
-    display:        flex;
-    flex-direction: row;
-    align-items:    center;
     position:       fixed;
     top:            0;
     left:           0;
@@ -47,9 +104,11 @@
     box-sizing:     border-box;
     transition:     all .25s ease-out;
     
+    // background-color: red;
+    
+    // Class only relevant above breakpoint
     &.is-small {
-      
-      
+      height: $headerSmHeight;
       
     }
     
@@ -66,6 +125,40 @@
       display: none;
     }
     
+    .fm-Nav {
+      display:  block;
+      position: absolute;
+      
+      .fm-Nav-list {
+        
+      }
+      
+      .fm-Nav-item {
+        display: inline-block;
+        float:   right;
+        
+        &:first-of-type {
+          margin-right: $headerGutter;
+        }
+      }
+      
+      .fm-Nav-link {
+        
+      }
+    }
+    
   }
   
+}
+
+.u-shrinksWithNav {
+  position: relative;
+}
+
+
+.fm-Header.is-showingSideNavbar ~ .u-shrinksWithNav {
+  
+  @media (max-width: $screen-md-min) {
+    right: $navBarWidth;
+  }
 }
