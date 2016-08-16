@@ -1,0 +1,71 @@
+@import '../../style/fm-variables';
+
+
+
+.fm-Header {
+  height:   $headerHeight;
+  position: relative;
+  
+  &.is-small {
+    height: 50px;
+    
+    
+  }
+  
+  .fm-Header-wrapper {
+    display:        flex;
+    flex-direction: row;
+    align-items:    center;
+    
+  }
+  .fm-Logo {
+    // margin:           $headerGutter $headerGutter 0 $headerGutter;
+    display:     inline-block;
+    margin-left: $headerGutter;
+  }
+  .fm-Header-title {
+    display: inline-block;
+    margin:  0 0 0 $headerGutter;
+  }
+  .fm-Header-hamburger {
+    position: fixed;
+    top:      $medGutter;
+    right:    $medGutter;
+  }
+  
+  
+  
+  
+  @media (min-width: $screen-md-min) {
+    display:        flex;
+    flex-direction: row;
+    align-items:    center;
+    position:       fixed;
+    top:            0;
+    left:           0;
+    right:          0;
+    box-sizing:     border-box;
+    transition:     all .25s ease-out;
+    
+    &.is-small {
+      
+      
+      
+    }
+    
+    .fm-Header-wrapper {
+      
+    }
+    .fm-Header-logo {
+      
+    }
+    .fm-Header-title {
+      
+    }
+    .fm-Header-hamburger {
+      display: none;
+    }
+    
+  }
+  
+}

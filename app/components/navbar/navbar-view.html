@@ -1,0 +1,36 @@
+<nav class="fm-Nav"
+     id="fm-Nav"
+     data-ng-class="{ 
+      'hidden-xs': !navCtrl.navVisible.visible, 
+      'hidden-sm': !navCtrl.navVisible.visible, 
+     }"
+>
+  <ul class="fm-Nav-list">
+  
+    <li class="fm-Nav-item"
+        ui-sref-active="is-active"
+    >
+      <a class="fm-Nav-link"
+         ui-sref="portfolio"
+      >portfolio</a>
+    </li>
+    
+    <li class="fm-Nav-item"
+    
+    >
+    <!-- ui-sref-active="is-active" -->
+      <a class="fm-Nav-link"
+      >blog</a>
+    </li> 
+    <!-- ui-sref="blog" -->
+    
+     <li class="fm-Nav-item"
+    >
+    <!-- ui-sref-active="is-active" -->
+      <a class="fm-Nav-link"
+      >about</a>
+      <!-- ui-sref="about" -->
+    </li>
+    
+  </ul>
+</nav>
