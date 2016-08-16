@@ -2,7 +2,6 @@
   angular.module('fm.header')
     .controller('HeaderController', [
       '$log', 
-      'navVisible', 
       HeaderController,
     ]);
   

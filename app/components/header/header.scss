@@ -4,10 +4,11 @@
   display:          flex;
   flex-direction:   row;
   align-items:      center;
-  height:           $headerHeight;
+  height:           $headerLgHeight;
   position:         relative;
   background-color: white;
   z-index:          1;
+  // background: linear-gradient(180deg, white, rgba(265, 265, 265, 0));
   
   .fm-Header-wrapper {
     display:        flex;
@@ -47,7 +48,7 @@
     .fm-Nav-item {
       display: block;
       float:   none;
-      margin:  10px;
+      margin:  $medGutter;
       
       &:first-of-type {
         
@@ -62,10 +63,10 @@
   // Mobile Only 
   @media (max-width: $screen-sm-max) {
     &.is-showingSideNavbar {
-      right: 40%;
+      right: $navBarWidth;
       
       .fm-Header-hamburger {
-        right: calc(40% + 10px);
+        right: calc(#{$navBarWidth} + #{$medGutter});
         // display: none;
       }
       
@@ -82,8 +83,8 @@
     }
     
     .fm-Nav {
-      width:            40%;
-      background-color: rgba(0, 0, 0, .2);
+      width:            $navBarWidth;
+      background-color: $lightGreyNegative;
       top:              0;
       
     }
@@ -107,7 +108,7 @@
     
     // Class only relevant above breakpoint
     &.is-small {
-      height: 50px;
+      height: $headerSmHeight;
       
     }
     
@@ -125,7 +126,7 @@
     }
     
     .fm-Nav {
-      display: block;
+      display:  block;
       position: absolute;
       
       .fm-Nav-list {
@@ -158,6 +159,6 @@
 .fm-Header.is-showingSideNavbar ~ .u-shrinksWithNav {
   
   @media (max-width: $screen-md-min) {
-    right: 40%;
+    right: $navBarWidth;
   }
 }

@@ -1,8 +1,15 @@
 @import '~font-awesome/scss/font-awesome';
 @import 'bootstrap-pre-customizations';
 
-$headerHeight: 300px;
-$headerGutter: 50px;
-$smallGutter: 5px;
-$medGutter: 10px;
-$lgGutter: 15px;
+
+$lightGreyNegative: rgba(0, 0, 0, .2);
+
+$smallGutter:    5px;
+$medGutter:      10px;
+$lgGutter:       15px;
+
+$headerLgHeight: 300px;
+$headerSmHeight: 60px;
+$headerGutter:   50px;
+
+$navBarWidth:    40%;
