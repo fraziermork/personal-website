@@ -5,6 +5,7 @@
     'fm.header',
     'fm.wrapper',
     'fm.portfolio',
+    'fm.about', 
   ])
   .config([
     '$stateProvider', 

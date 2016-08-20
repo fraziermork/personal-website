@@ -1,47 +1,62 @@
-<section class="fm-Portfolio">
-  
-  
-  <article 
-  class="fm-Portfolio-piece"
-  data-ng-repeat="piece in portCtrl.pieces"
-  >
-    <h4 
-    class="fm-Portfolio-title"
-    data-ng-bind="piece.title"
-    ></h4>
-    <h6 
-    class="fm-Portfolio-subtitle"
-    data-ng-bind="piece.subtitle"
-    ></h6>
-  
-    <div 
-    class="fm-Portfolio-imageWrapper"
-    data-ng-repeat="image in piece.images"
+<section class="fm-Portfolio container">
+  <div class="row">
+    <article class="fm-Portfolio-project col-xs-12"
+             data-ng-repeat="project in portCtrl.projects"
     >
-      <img 
-      class="fm-Portfoli-image"
-      data-ng-src="image.source" 
-      alt="image.altText" 
-      />
-    </div>
-    
-    <div
-    class="fm-Porfolio-body"
-    data-ng-bind="piece.body"
-    ></div>
-  
-  
-    <a 
-    ng-href="{{ piece.deployLink }}"
-    >View Project</a>
-    
-    <a 
-    ng-href="{{ piece.githubLink }}"
-    >View Code</a>
+      <div class="row">
+        <div class="fm-Portfolio-titleWrapper col-xs-12">
+          <h3 class="fm-Portfolio-title"
+              data-ng-bind="project.title"
+          ></h3>
+          <h6 class="fm-Portfolio-subtitle"
+              data-ng-bind="project.subtitle"
+          ></h6>
+        </div>
+      </div>
+      
+      
 
-  </article>
-  
-  
-  
-  
+      
+    
+      <div class="fm-Portfolio-bodyWrapper row">
+        <div class="col-xs-12 col-sm-6">
+          <p class="fm-Porfolio-body"
+             data-ng-bind="project.body"
+          ></p>
+          <nav class="fm-Portfolio-nav">
+            <div class="fm-Portfolio-linkWrapper pull-right">
+              <a class="fm-Portfolio-link btn btn-primary"
+                 ng-href="{{ project.deployLink }}"
+                 role="button"
+              >View Project</a>
+            </div>
+            <div class="fm-Portfolio-linkWrapper pull-right">
+              <a class="fm-Portfolio-link btn btn-default"
+                 ng-href="{{ project.githubLink }}"
+                 role="button"
+              >View Code</a>
+            </div>
+          </nav>
+          
+        </div>
+        
+        <div class="fm-Portfolio-imageWrapper col-xs-12 col-sm-6">
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <img class="fm-Portfolio-image"
+                   data-ng-src="{{ project.image.source }}" 
+                   alt="project.image.altText" 
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      
+
+      
+    </article>
+  </div>
 </section>

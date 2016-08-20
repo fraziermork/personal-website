@@ -1,0 +1,55 @@
+@import '../../style/fm-variables';
+
+.fm-Portfolio {
+  font-family: 'Lato', sans-serif;
+}
+
+.fm-Portfolio-project {
+  margin-bottom: 15%;
+}
+
+.fm-Portfolio-titleWrapper {
+  display:       flex;
+  align-items:   center;
+  margin-bottom: 10px;
+}
+.fm-Portfolio-title {
+  font-family:    'Raleway', sans-serif;
+  font-weight:    400;
+  text-transform: uppercase;
+  font-stretch:   ultra-expanded;
+  margin:         0;
+  @media (min-width: $screen-md-min) {
+    display:        inline-block;
+  }
+}
+
+.fm-Portfolio-subtitle {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.fm-Portfolio-bodyWrapper {
+  
+}
+.fm-Porfolio-body {
+  
+}
+
+.fm-Portfolio-image {
+  max-width: 100%;
+}
+
+
+.fm-Portfolio-nav {
+  
+}
+
+.fm-Portfolio-linkWrapper {
+  padding: 0;
+  margin:  10px;
+}
+
+.fm-Portfolio-link {
+
+}

@@ -2,7 +2,7 @@
 .DS_Store
 notes/*
 build/*
-
+app/assets/frazier-mork-cv.pdf
 
 # FROM GITHUB
 # Logs

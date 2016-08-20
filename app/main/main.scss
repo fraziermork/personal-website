@@ -15,13 +15,17 @@
 
 
 .fm-Main {
-  
+  margin-top: 0;
   
   @media (min-width: $screen-md-min) {
     margin-top: $headerLgHeight;
   }
 }
 
+body, html {
+  // overflow: hidden;
+  font-size: 14px;
+}
 body {
   height: 5000px;
 }
