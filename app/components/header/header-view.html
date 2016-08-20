@@ -65,6 +65,7 @@
         'hidden-xs': !headCtrl.navVisible, 
         'hidden-sm': !headCtrl.navVisible, 
        }"
+       data-ng-click="headCtrl.navVisible = false"
   >
     <ul class="fm-Nav-list">
     
@@ -89,6 +90,7 @@
       >
       <!-- ui-sref-active="is-active" -->
         <a class="fm-Nav-link"
+           ui-sref="about"
         >about</a>
         <!-- ui-sref="about" -->
       </li>

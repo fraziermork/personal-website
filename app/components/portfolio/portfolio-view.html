@@ -1,46 +1,46 @@
 <section class="fm-Portfolio container">
   <div class="row">
-    <article 
-    class="fm-Portfolio-project col-xs-12"
-    data-ng-repeat="project in portCtrl.projects"
+    <article class="fm-Portfolio-project col-xs-12"
+             data-ng-repeat="project in portCtrl.projects"
     >
-      <h4 
-      class="fm-Portfolio-title"
-      data-ng-bind="project.title"
+      <h4 class="fm-Portfolio-title"
+          data-ng-bind="project.title"
       ></h4>
-      <h6 
-      class="fm-Portfolio-subtitle"
-      data-ng-bind="project.subtitle"
+      <h6 class="fm-Portfolio-subtitle"
+          data-ng-bind="project.subtitle"
       ></h6>
     
       <div class="fm-Portfolio-bodyWrapper row">
-        <div class="fm-Portfolio-imageWrapper col-xs-12 col-sm-6"
-             data-ng-repeat="image in project.images"
-        >
-          <img class="fm-Portfolio-image"
-               data-ng-src="{{ image.source }}" 
-               alt="image.altText" 
-          />
-        </div>
-        
-        <p class="fm-Porfolio-body"
+        <p class="fm-Porfolio-body col-xs-12 col-sm-6"
            data-ng-bind="project.body"
         ></p>
-        
+        <div class="fm-Portfolio-imageWrapper col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0"
+        >
+          <img class="fm-Portfolio-image"
+               data-ng-src="{{ project.image.source }}" 
+               alt="project.image.altText" 
+          />
+        </div>
       </div>
       
     
-    
-      <a 
-      class="btn btn-primary"
-      ng-href="{{ project.deployLink }}"
-      >View Project</a>
+      <nav class="fm-Portfolio-nav row">
+        <div class="fm-Portfolio-linkWrapper col-xs-3 col-xs-offset-2">
+          <a class="fm-Portfolio-link"
+             ng-href="{{ project.deployLink }}"
+             role="button"
+          >View Project</a>
+        </div>
+        <div class="fm-Portfolio-linkWrapper col-xs-3 col-xs-offset-2">
+          <a class="fm-Portfolio-link"
+             ng-href="{{ project.githubLink }}"
+             role="button"
+          >View Code</a>
+        </div>
+      </nav>
       
-      <a 
-      class="btn btn-default"
-      ng-href="{{ project.githubLink }}"
-      >View Code</a>
 
+      
     </article>
   </div>
 </section>

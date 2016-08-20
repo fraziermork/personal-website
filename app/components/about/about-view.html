@@ -1,0 +1,146 @@
+<section class="fm-About container">
+  
+  
+  <div class="row">
+    
+    <!-- ABOUT -->
+    <article class="fm-About-article col-xs-12 col-sm-6">
+      <div class="row ">
+        <div class="col-xs-12">
+          <h3 class="fm-About-header">about me</h3>
+          <p class="fm-About-blurb">
+            When I was young, I loved Dexter's Laboratory, a cartoon about a young boy who invents the unimaginable in his attic. I dreamed of achieving the same things in my own life and devoted myself to the study of science. The further I got into the sciences, the more I realized that the magic in Dexter's life wasn't his understanding of the world, it was his ability to create something from nothing--to breathe life into his work. Since I became a programmer, I have discovered the same skill in myself--I can build applications, tools, and games from keystrokes, and I am only limited by how fast I type. 
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    
+    <!-- PORTRAIT -->
+    <div class="col-xs-12 col-sm-6 row">
+      <div class="col-xs-12">
+        <img class="fm-About-portrait" 
+             ng-src="{{ abtCtrl.portrait }}" 
+             alt="Frazier Mork" 
+        />
+      </div>
+    </div>
+    
+    
+    <!-- SKILLS -->
+    <div class="col-xs-12 col-sm-6">
+      <h3 class="fm-About-header">Skills</h3>
+      <ul class="fm-About-skillList">
+        <li class="fm-About-skillWrapper row col-xs-12 col-sm-6"
+            data-ng-repeat="skill in abtCtrl.skills"
+        >
+          <div class="fm-About-skillIconWrapper col-xs-2">
+            <img ng-src="{{ skill.icon }}" 
+                 alt="{{ skill.name }}"
+                 class="fm-About-skillIcon"
+            />
+          </div>
+          <div class="fm-About-skillNameWrapper col-xs-10">
+            <p class="fm-About-skillName"
+               data-ng-bind="skill.name"
+            ></p>
+          </div>
+        </li>  
+      </ul>
+      <!-- <div class="row">
+        <a ng-href="{{ abtCtrl.resume }}">RESUME</a>
+        
+      </div> -->
+    </div>
+    
+    
+    
+    <!-- CONTACT -->
+    <form class="fm-About-contact col-xs-12 col-sm-6" 
+          action="javascript:void(0);" 
+          name="contactForm"
+          novalidate 
+          autocomplete="off"
+    >
+      <h3 class="fm-About-header">contact me</h3>
+      <p class="fm-About-blurb">
+        If you have questions, comments, or are interested in collaborating, please don't hesitate to reach out. 
+      </p>
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label for="fm-About-emailInput"
+                 class="fm-About-label"
+          >email</label>
+          <input class="fm-About-contactInput form-control"
+                 id="fm-About-emailInput"
+                 type="email" 
+                 name="name" 
+                 data-ng-model="abtCtrl.emailData.from"
+                 placeholder="Email"
+                 required
+          >
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label for="fm-About-subjectInput"
+                 class="fm-About-label"
+          >subject</label>
+          <input class="fm-About-contactInput form-control"
+                 id="fm-About-subjectInput"
+                 type="text" 
+                 name="subject" 
+                 data-ng-model="abtCtrl.emailData.subject"
+                 placeholder="Subject"
+                 required
+          >
+        </div>
+      </div>
+    
+    
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label for="fm-About-subjectInput"
+                 class="fm-About-label"
+          >message</label>
+          <textarea class="fm-About-contactInput form-control"
+                    name="body"
+                    data-ng-model="abtCtrl.emailData.text"
+                    placeholder="Message"
+          ></textarea> 
+        </div>
+      </div>
+    
+      <button class="fm-About-contactSubmit btn btn-primary"
+              type="submit" 
+              name="button"
+              data-ng-click="abtCtrl.sendEmail()"
+      >send</button>
+    </form>
+    
+    <!-- <div class="row">
+      <p class="fm-About-blurb">
+        Or find me online 
+      </p>
+      <ul class="">
+        <li class=""></li>
+      </ul>
+      
+    </div> -->
+    
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+</section>

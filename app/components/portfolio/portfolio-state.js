@@ -15,6 +15,10 @@
       controller:   'PortfolioController', 
       controllerAs: 'portCtrl', 
       url:          '/portfolio',
+      data: {
+        title: 'portfolio'
+      }, 
+      
     });
   }
   

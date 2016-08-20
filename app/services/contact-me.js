@@ -10,7 +10,7 @@
   function contactMe($log, $http, $q) {
     return {
       pending: false, 
-      email(body) {
+      email(emailData) {
         $log.debug('contactMe email');
         if (this.pending) return;
         

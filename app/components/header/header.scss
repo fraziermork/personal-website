@@ -8,13 +8,17 @@
   position:         relative;
   background-color: white;
   z-index:          1;
+  font-size:        1rem;
+  font-family:      'Raleway', sans-serif;
+  text-transform:   uppercase;
+  font-stretch:     ultra-expanded;
+  
   // background: linear-gradient(180deg, white, rgba(265, 265, 265, 0));
   
   .fm-Header-wrapper {
     display:        flex;
     flex-direction: row;
     align-items:    center;
-    
   }
   .fm-Logo {
     // margin:           $headerGutter $headerGutter 0 $headerGutter;

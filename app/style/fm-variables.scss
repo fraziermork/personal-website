@@ -13,3 +13,9 @@ $headerSmHeight: 60px;
 $headerGutter:   50px;
 
 $navBarWidth:    40%;
+
+@mixin fm-heading() {
+  font-family:      'Raleway', sans-serif;
+  text-transform:   uppercase;
+  font-stretch:     ultra-expanded;
+}

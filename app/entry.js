@@ -6,6 +6,7 @@ require('./services');
 require('./components/header');
 require('./components/wrapper');
 require('./components/portfolio');
+require('./components/about');
 
 
 require('./main');

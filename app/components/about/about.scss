@@ -1,0 +1,32 @@
+.fm-About-header {
+  font-family:      'Raleway', sans-serif;
+  text-transform:   uppercase;
+  font-stretch:     ultra-expanded;
+}
+
+.fm-About-blurb {
+  font-family: 'Lato', sans-serif;
+}
+
+.fm-About-skillList {
+  list-style-type: none;
+  padding:         0;
+  width:           100%;
+  font-family:     'Lato', sans-serif;
+}
+
+.fm-About-portrait {
+  max-width: 100%;
+}
+
+.fm-About-skillWrapper {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+}
+
+.fm-About-skillIcon {
+  max-width: 100%;
+  min-width: 25px;
+  // width:     25px;
+}
