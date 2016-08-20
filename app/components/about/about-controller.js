@@ -1,6 +1,8 @@
 const portrait = require('../../assets/images/frazier.png');
 const resume   = require('!!file?name=[name].[ext]!../../assets/frazier-mork-cv.pdf');
 const skills   = require('../../data/skills');
+const links    = require('../../data/links');
+
 
 (function() {
   angular.module('fm.about')
@@ -16,6 +18,7 @@ const skills   = require('../../data/skills');
     vm.portrait = portrait;
     vm.resume   = resume; 
     vm.skills   = skills;
+    vm.links    = links;
     
     vm.emailData = {
       from:    null, 

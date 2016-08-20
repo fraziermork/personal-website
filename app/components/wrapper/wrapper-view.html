@@ -1,7 +1,11 @@
 <section class="fm-Wrapper clearfix">
-  <h1 class="fm-Wrapper-title"
-      data-ng-bind="wrapCtrl.$state.current.data.title"    
-  ></h1>
+  <div class="container">
+    <div class="row">
+      <h1 class="fm-Wrapper-title col-xs-12"
+          data-ng-bind="wrapCtrl.$state.current.data.title + ':'"    
+      ></h1>
+    </div>
+  </div>
   
   <section ui-view></section>
 </section>

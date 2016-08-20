@@ -1,7 +1,8 @@
 .fm-About-header {
-  font-family:      'Raleway', sans-serif;
-  text-transform:   uppercase;
-  font-stretch:     ultra-expanded;
+  font-family:    'Raleway', sans-serif;
+  font-weight:    400;
+  text-transform: uppercase;
+  font-stretch:   ultra-expanded;
 }
 
 .fm-About-blurb {
@@ -19,14 +20,38 @@
   max-width: 100%;
 }
 
+.fm-About-contact {
+  margin-bottom: 10px;
+}
+
 .fm-About-skillWrapper {
-  display: flex;
+  display:     flex;
   align-items: center;
-  min-height: 50px;
+  min-height:  50px;
 }
 
 .fm-About-skillIcon {
   max-width: 100%;
   min-width: 25px;
   // width:     25px;
+}
+
+.fm-About-links {
+  
+}
+.fm-About-linksList {
+  padding: 0;
+  list-style-type: none;
+  
+}
+.fm-About-linkWrapper {
+  display: inline-block;
+  margin-left: 10px;
+}
+.fm-About-link {
+  text-decoration: none;
+  color: inherit;
+}
+.fm-About-icon {
+  
 }

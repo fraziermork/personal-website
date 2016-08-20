@@ -56,78 +56,99 @@
     
     
     <!-- CONTACT -->
-    <form class="fm-About-contact col-xs-12 col-sm-6" 
-          action="javascript:void(0);" 
-          name="contactForm"
-          novalidate 
-          autocomplete="off"
-    >
-      <h3 class="fm-About-header">contact me</h3>
-      <p class="fm-About-blurb">
-        If you have questions, comments, or are interested in collaborating, please don't hesitate to reach out. 
-      </p>
-      <div class="row">
-        <div class="form-group col-xs-12">
-          <label for="fm-About-emailInput"
-                 class="fm-About-label"
-          >email</label>
-          <input class="fm-About-contactInput form-control"
-                 id="fm-About-emailInput"
-                 type="email" 
-                 name="name" 
-                 data-ng-model="abtCtrl.emailData.from"
-                 placeholder="Email"
-                 required
-          >
+    <div class="col-xs-12 col-sm-6">
+      <form class="fm-About-contact" 
+            action="javascript:void(0);" 
+            name="contactForm"
+            novalidate 
+            autocomplete="off"
+      >
+        <h3 class="fm-About-header">contact me</h3>
+        <p class="fm-About-blurb">
+          If you have questions, comments, or are interested in collaborating, please don't hesitate to reach out. 
+        </p>
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <label for="fm-About-emailInput"
+                   class="fm-About-label"
+            >email</label>
+            <input class="fm-About-contactInput form-control"
+                   id="fm-About-emailInput"
+                   type="email" 
+                   name="name" 
+                   data-ng-model="abtCtrl.emailData.from"
+                   placeholder="Email"
+                   required
+            >
+          </div>
         </div>
-      </div>
+        
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <label for="fm-About-subjectInput"
+                   class="fm-About-label"
+            >subject</label>
+            <input class="fm-About-contactInput form-control"
+                   id="fm-About-subjectInput"
+                   type="text" 
+                   name="subject" 
+                   data-ng-model="abtCtrl.emailData.subject"
+                   placeholder="Subject"
+                   required
+            >
+          </div>
+        </div>
+      
+      
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <label for="fm-About-subjectInput"
+                   class="fm-About-label"
+            >message</label>
+            <textarea class="fm-About-contactInput form-control"
+                      name="body"
+                      data-ng-model="abtCtrl.emailData.text"
+                      placeholder="Message"
+            ></textarea> 
+          </div>
+        </div>
+      
+        <button class="fm-About-contactSubmit btn btn-primary"
+                type="submit" 
+                name="button"
+                data-ng-click="abtCtrl.sendEmail()"
+        >send</button>
+      </form>
       
       <div class="row">
-        <div class="form-group col-xs-12">
-          <label for="fm-About-subjectInput"
-                 class="fm-About-label"
-          >subject</label>
-          <input class="fm-About-contactInput form-control"
-                 id="fm-About-subjectInput"
-                 type="text" 
-                 name="subject" 
-                 data-ng-model="abtCtrl.emailData.subject"
-                 placeholder="Subject"
-                 required
-          >
+        <div class="col-xs-6">
+          <p class="fm-About-blurb">
+            Or find me online: 
+          </p>
         </div>
+        
+        <nav class="fm-About-links col-xs-6">
+          <ul class="fm-About-linksList">
+            <li class="fm-About-linkWrapper pull-right"
+                data-ng-repeat="link in abtCtrl.links"
+            >
+              <a class="fm-About-link" 
+                 ng-href="link.url"
+              >
+                <span class="fm-About-icon fa"
+                      ng-class="link.classesToApply" 
+                      aria-hidden="{{ !link.content }}"
+                      data-ng-bind="link.content"
+                ></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
+    </div>
     
     
-      <div class="row">
-        <div class="form-group col-xs-12">
-          <label for="fm-About-subjectInput"
-                 class="fm-About-label"
-          >message</label>
-          <textarea class="fm-About-contactInput form-control"
-                    name="body"
-                    data-ng-model="abtCtrl.emailData.text"
-                    placeholder="Message"
-          ></textarea> 
-        </div>
-      </div>
     
-      <button class="fm-About-contactSubmit btn btn-primary"
-              type="submit" 
-              name="button"
-              data-ng-click="abtCtrl.sendEmail()"
-      >send</button>
-    </form>
-    
-    <!-- <div class="row">
-      <p class="fm-About-blurb">
-        Or find me online 
-      </p>
-      <ul class="">
-        <li class=""></li>
-      </ul>
-      
-    </div> -->
     
   </div>
   
