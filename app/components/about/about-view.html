@@ -17,12 +17,14 @@
     
     
     <!-- PORTRAIT -->
-    <div class="col-xs-12 col-sm-6 row">
-      <div class="col-xs-12">
-        <img class="fm-About-portrait" 
-             ng-src="{{ abtCtrl.portrait }}" 
-             alt="Frazier Mork" 
-        />
+    <div class="fm-About-portrait col-xs-12 col-sm-6">
+      <div class="fm-About-portraitRow row">
+        <div class="fm-About-portraitImgWrapper col-xs-10 col-xs-offset-1">
+          <img class="fm-About-portraitImg img-responsive" 
+               ng-src="{{ abtCtrl.portrait }}" 
+               alt="Frazier Mork" 
+          />
+        </div>
       </div>
     </div>
     
@@ -31,19 +33,24 @@
     <div class="col-xs-12 col-sm-6">
       <h3 class="fm-About-header">Skills</h3>
       <ul class="fm-About-skillList">
-        <li class="fm-About-skillWrapper row col-xs-12 col-sm-6"
+        <li class="fm-About-skillWrapper"
             data-ng-repeat="skill in abtCtrl.skills"
         >
-          <div class="fm-About-skillIconWrapper col-xs-2">
-            <img ng-src="{{ skill.icon }}" 
-                 alt="{{ skill.name }}"
-                 class="fm-About-skillIcon"
-            />
-          </div>
-          <div class="fm-About-skillNameWrapper col-xs-10">
-            <p class="fm-About-skillName"
-               data-ng-bind="skill.name"
-            ></p>
+          <div class="fm-About-skillRow">
+            <div class="fm-About-skillIcon">
+              <div class="fm-About-skillIconWrapper">
+                <img ng-src="{{ skill.icon }}" 
+                     alt="{{ skill.name }}"
+                     class="fm-About-skillIconImg img-responsive center-block"
+                />
+              </div>
+            </div>    
+            
+            <div class="fm-About-skillNameWrapper">
+              <p class="fm-About-skillName"
+                 data-ng-bind="skill.name"
+              ></p>
+            </div>
           </div>
         </li>  
       </ul>

@@ -1,12 +1,15 @@
 (function() {
   angular.module('fm.portfolio')
-    .controller('Controller', [
+    .controller('BlogController', [
       '$log',
-      
-      Controller,
+      BlogController,
     ]);
   
-  function Controller() {
+  function BlogController() {
+    const vm = this;
+    
+    
+    
     
   }
     

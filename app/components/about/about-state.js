@@ -5,10 +5,10 @@
   .config([
     '$stateProvider', 
     '$urlRouterProvider', 
-    aboutConfig, 
+    aboutStateConfiguration, 
   ]);
   
-  function aboutConfig($stateProvider, $urlRouterProvider) {
+  function aboutStateConfiguration($stateProvider, $urlRouterProvider) {
     $stateProvider.state('about', {
       template:     template, 
       parent:       'wrapper',
