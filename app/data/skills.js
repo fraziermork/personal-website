@@ -71,4 +71,8 @@ module.exports = [
     name: 'D3', 
     icon: require('../assets/images/d3-icon.svg'),
   },
+  {
+    name: 'WAI-ARIA', 
+    icon: require('../assets/images/w3c-icon.png'),
+  },
 ];

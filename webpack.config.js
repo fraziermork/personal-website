@@ -1,3 +1,5 @@
+'use strict';
+
 const webpack       = require('webpack');
 const autoprefixer  = require('autoprefixer');
 const ExtractPlugin = require('extract-text-webpack-plugin');
@@ -78,8 +80,9 @@ module.exports = {
         test:   /\.scss$/, 
         loader: ExtractPlugin.extract('style', 'css!postcss!resolve-url!sass?sourceMap', { allChunks: true })
       },
-      {
-        test:    /\.(png|jpe?g|ttf|eot|svg|woff(2)?)(\?v=\d+\.\d\.\d+)?$/, 
+      { 
+        // version no regex unneeded
+        test:    /\.(png|jpe?g|ttf|eot|svg|woff(2)?)(\?v=\d+\.\d+\.\d+)?$/, 
         loaders: [
           'url?limit=10000', 
           'image-webpack?bypassOnDebug'
@@ -88,7 +91,15 @@ module.exports = {
       {
         test:   /\.html$/, 
         loader: 'html'
-      }
+      },
+      {
+        test: /\.md$/, 
+        loader: 'raw'
+      }, 
+      {
+        test: /\.json$/, 
+        loader: 'json'
+      },
     ]
   }, 
   devSever: {

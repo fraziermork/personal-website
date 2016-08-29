@@ -6,6 +6,9 @@
     'fm.wrapper',
     'fm.portfolio',
     'fm.about', 
+    'fm.blog', 
+    'fm.article',
+    'fm.code-block', 
   ])
   .config([
     '$stateProvider', 

@@ -1,5 +1,11 @@
 <section class="fm-Blog container-fluid">
   
-  
+  <ul class="fm-Blog-articleList">
+    <li class="fm-Blog-article"
+        data-ng-repeat="article in blogCtrl.articles"
+    >
+      <fm-article data-article="article"></fm-article>
+    </li>
+  </ul>
   
 </section>

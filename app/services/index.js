@@ -5,3 +5,4 @@
 })();
 
 require('./contact-me');
+require('./markdown-it');

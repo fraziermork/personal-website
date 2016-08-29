@@ -12,7 +12,6 @@
     return {
       template:     template, 
       restrict:     'E', 
-      replace:      true,
       controller:   'HeaderController', 
       controllerAs: 'headCtrl', 
       

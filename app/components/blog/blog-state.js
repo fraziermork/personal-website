@@ -16,7 +16,7 @@
       controllerAs: 'blogCtrl', 
       url:          '/blog',
       data: {
-        title: 'blog'
+        title: 'blog',
       }, 
       
     });

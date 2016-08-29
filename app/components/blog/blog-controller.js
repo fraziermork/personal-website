@@ -5,9 +5,9 @@
       BlogController,
     ]);
   
-  function BlogController() {
-    const vm = this;
-    
+  function BlogController($log) {
+    const vm    = this;
+    vm.articles = require('../../data/articles');
     
     
     
