@@ -23,7 +23,7 @@
         $log.warn(`instantiating article ${ctrl.article.title}`);
         let textToGoInsideArticle = markdownIt.render(ctrl.article.body);
         $log.log('RENDERED HTML: \n', textToGoInsideArticle);
-        element.html(textToGoInsideArticle);
+        element.find('div').html(textToGoInsideArticle);
         $compile(element.contents())(scope);
       },
     };

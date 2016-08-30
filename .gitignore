@@ -3,6 +3,9 @@
 notes/*
 build/*
 app/assets/frazier-mork-cv.pdf
+data/db/*
+!data/db/.gitkeep
+backend/test/data/articles/*
 
 # FROM GITHUB
 # Logs
