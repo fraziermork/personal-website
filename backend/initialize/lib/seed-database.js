@@ -3,16 +3,20 @@
 // npm modules 
 const debug    = require('debug')('fm:seedDatabase');
 const Promise  = require('bluebird');
-const fs       = Promise.promisifyAll(require('fs'));
-const path     = require('path');
+const Article  = require('../../resources/article/article-model');
 
 // internal modules 
-const readArticlesDir = require('./read-directory');
+const articleReader = require('./article-reader');
 
-module.exports = seedDatabase;
-
-
-function seedDatabase(inputPathToArticlesDirectory, directoryCalledFrom) {
-  debug('seedDatabase');
-  readArticlesDir(inputPathToArticlesDirectory, directoryCalledFrom);
-}
+module.exports = {
+  seedDatabaseWithArticles(inputPathToArticlesDirectory) {
+    debug('seedDatabaseWithArticles');
+    return articleReader.readEachArticle(inputPathToArticlesDirectory)
+      .then((articles) => {
+        debug('seedDatabaseWithArticles then');
+        return Promise.all(articles.map((articleInfo) => {
+          return Article.create(articleInfo);
+        }));
+      });
+  }
+};

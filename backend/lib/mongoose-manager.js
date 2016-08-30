@@ -1,17 +1,17 @@
 'use strict';
 
 // environment variables 
-const DB_PORT = process.env.MONGODB_URI || 'mongodb://localhost/db';
+const DB_PORT    = process.env.MONGODB_URI || 'mongodb://localhost/db';
 
 // npm modules 
-const debug = require('debug')('fm:mongooseManager');
-const Promise = require('bluebird');
-const mongoose = require('mongoose');
-Promise.promisifyAll(mongoose);
+const debug      = require('debug')('fm:mongooseManager');
+const Promise    = require('bluebird');
+const mongoose   = require('mongoose');
+mongoose.Promise = Promise;
 
 
-module.exports = {
-  
+
+module.exports   = {
   /**  
    * startConnectionToDatabase - Starts the connection to MongoDB  
    *    
