@@ -8,7 +8,7 @@ const production    = process.env.NODE_ENV === 'production' || process.npm_lifec
 
 const PATHS         = {
   entry: `${__dirname}/app/entry`,
-  build: `${__dirname}/build`
+  build: `${__dirname}/build`,
 };
 
 let plugins = [
@@ -16,13 +16,13 @@ let plugins = [
   new webpack.optimize.CommonsChunkPlugin({
     name:      'vendor',
     children:  true,
-    minChunks: 2
+    minChunks: 2,
   }),
   new webpack.optimize.OccurenceOrderPlugin(), 
   new CleanPlugin('build'),
   new webpack.DefinePlugin({
-    __DEVONLY__: !production 
-  })
+    __DEVONLY__: !production, 
+  }),
 ];
 
 if (production) {
@@ -30,8 +30,8 @@ if (production) {
     new webpack.optimize.UglifyJsPlugin({
       mangle: true,
       compress: {
-        warnings: false
-      }
+        warnings: false,
+      },
     })
   ]);
 }
@@ -42,63 +42,63 @@ module.exports = {
   entry: {
     vendor: [
       'angular', 
-      'angular-ui-router'
+      'angular-ui-router', 
     ], 
     bundle: [
       'bootstrap-loader/extractStyles',
-      PATHS.entry
+      PATHS.entry,
     ]
   }, 
   output: {
     path:     PATHS.build, 
-    filename: '[name].js'
+    filename: '[name].js',
   }, 
   module: {
     preLoaders: [
       {
         // Automatically supply html templates as template to files ending in '-directive'
         test:   /(-directive|-state)\.js$/, 
-        loader: 'baggage?[dir]-view.html=template'
+        loader: 'baggage?[dir]-view.html=template',
       }, 
       {
         // Automatically require sass files named after directory to index files
         test:   /index\.js$/, 
-        loader: 'baggage?[dir].scss'
+        loader: 'baggage?[dir].scss',
       }
     ], 
     loaders: [
       {
         test:    /\.js$/, 
         loader:  'babel', 
-        include: `${__dirname}/app`
+        include: `${__dirname}/app`,
       }, 
       {
         test:   /\.css$/, 
-        loader: ExtractPlugin.extract('style', 'css!postcss', { allChunks: true })
+        loader: ExtractPlugin.extract('style', 'css!postcss', { allChunks: true }),
       },
       {
         test:   /\.scss$/, 
-        loader: ExtractPlugin.extract('style', 'css!postcss!resolve-url!sass?sourceMap', { allChunks: true })
+        loader: ExtractPlugin.extract('style', 'css!postcss!resolve-url!sass?sourceMap', { allChunks: true }),
       },
       { 
         // version no regex unneeded
         test:    /\.(png|jpe?g|ttf|eot|svg|woff(2)?)(\?v=\d+\.\d+\.\d+)?$/, 
         loaders: [
           'url?limit=10000', 
-          'image-webpack?bypassOnDebug'
-        ]
+          'image-webpack?bypassOnDebug',
+        ],
       },
       {
         test:   /\.html$/, 
-        loader: 'html'
+        loader: 'html',
       },
       {
         test: /\.md$/, 
-        loader: 'raw'
+        loader: 'raw',
       }, 
       {
         test: /\.json$/, 
-        loader: 'json'
+        loader: 'json',
       },
     ]
   }, 
@@ -107,11 +107,11 @@ module.exports = {
     contentBase:        PATHS.build, 
     historyApiFallback: true, 
     progress:           true, 
-    stats:              'errors-only'
+    stats:              'errors-only',
   }, 
   stats: {
     reasons:            true, 
-    errorDetails:       true
+    errorDetails:       true,
   },
   postcss: function() {
     return [autoprefixer({
@@ -123,8 +123,8 @@ module.exports = {
         'Explorer >= 8',
         'iOS >= 6',
         'Opera >= 12',
-        'Safari >= 6'
-      ]
+        'Safari >= 6',
+      ],
     })];
-  }
+  },
 };

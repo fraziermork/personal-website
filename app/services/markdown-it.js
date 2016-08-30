@@ -1,4 +1,5 @@
 const MarkdownIt = require('markdown-it');
+const prism      = require('prismjs');
 
 (function() {
   angular.module('fm.services')
@@ -23,9 +24,10 @@ const MarkdownIt = require('markdown-it');
        */   
       highlight(str, lang) {
         if (lang === 'javascript') {
-          return `<section fm-code-block data-code="${str}"></section>`;
-        } 
-        return str;
+          return `<pre><section fm-code-block data-code="${str}"></section></pre>`;
+        } else {
+          return prism.highlight(str, prism.languages[lang]);
+        }
       }, 
     });
     

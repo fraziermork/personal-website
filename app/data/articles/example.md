@@ -10,6 +10,12 @@ function pleasework() {
 }
 pleasework();
 
+
+console.log('hello ron');
+
+var x = { latitude: 122.6, longitude: 43.2 };
+
+x
 ```
 
 
