@@ -1,0 +1,23 @@
+<section class="fm-Article-listWrapper">
+  <ul class="fm-Article-list">
+    <li class="fm-Article-previewWrapper"
+        data-ng-repeat="article in blogListCtrl.articleList"
+    >
+      <a class="fm-Article-previewLink"
+         ui-sref="blog.article({ articleId: article._id })"
+      >
+        <article class="fm-Article-preview">
+          <h4 class="fm-Article-previewTitle"
+              data-ng-bind="article.title"
+          ></h4>
+          <h6 class="fm-Article-previewSubtitle"
+              data-ng-bind="article.subtitle"
+          ></h6>
+          <p class="fm-Article-publicationDate"
+             data-ng-bind="article.publication_date"
+          ></p>
+        </article>
+      </a>
+    </li>
+  </ul>
+</section>

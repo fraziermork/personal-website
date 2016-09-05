@@ -1,6 +1,11 @@
 <section class="fm-Blog container-fluid">
   
-  <div class="row">
+  <!-- <div ui-view="sidebar"></div> -->
+  <fm-sidebar articles="blogCtrl.articleList"></fm-sidebar>
+  
+  <section ui-view></section>
+  
+  <!-- <div class="row">
     <ul class="fm-Blog-articleList col-xs-12 col-sm-8 col-sm-offset-1">
       <li class="fm-Blog-article"
           data-ng-repeat="article in blogCtrl.articles"
@@ -8,7 +13,7 @@
         <fm-article data-article="article"></fm-article>
       </li>
     </ul>
-  </div>
+  </div> -->
   
   
 </section>

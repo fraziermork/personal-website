@@ -60,6 +60,7 @@ describe('/articles', () => {
         expect(res.body).to.be.instanceof(Array);
         expect(res.body.length).to.equal(1);
         expect(res.body[0]._id).to.equal(dummyPublishedArticle._id.toString());
+        expect(res.body[0]).to.not.have.property('content');
         done();
       });
   });
@@ -70,6 +71,7 @@ describe('/articles', () => {
         expect(err).to.equal(null);
         expect(res.status).to.equal(200);
         expect(res.body._id).to.equal(dummyPublishedArticle._id.toString());
+        expect(res.body.content).to.equal(dummyPublishedArticle.content.toString());
         done();
       });
   });

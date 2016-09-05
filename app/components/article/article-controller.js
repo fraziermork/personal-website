@@ -6,6 +6,7 @@
     ]);
   
   function ArticleController($log) {
+    // const vm   = this;
     
   }
   

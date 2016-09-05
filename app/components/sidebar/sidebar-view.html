@@ -1,0 +1,13 @@
+<nav class="fm-Sidebar">
+  <ul class="fm-Sidebar-list">
+    <li class="fm-Sidebar-linkWrapper"
+        data-ng-repeat="article in articles"
+    >
+      <a class="fm-Sidebar-link"
+         ui-sref="blog.article({ articleId: article._id })"
+         ui-sref-active="is-active"
+         data-ng-bind="article.title"
+      ></a>
+    </li>
+  </ul>
+</nav>

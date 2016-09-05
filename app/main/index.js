@@ -7,6 +7,7 @@
     'fm.portfolio',
     'fm.about', 
     'fm.blog', 
+    'fm.sidebar',
     'fm.article',
     'fm.code-block', 
   ])

@@ -11,6 +11,8 @@ const PATHS         = {
   build: `${__dirname}/build`,
 };
 
+const API_URL = production ? '/api' : process.env.npm_config_dev_url;
+
 let plugins = [
   new ExtractPlugin('bundle.css'),
   new webpack.optimize.CommonsChunkPlugin({
@@ -22,6 +24,7 @@ let plugins = [
   new CleanPlugin('build'),
   new webpack.DefinePlugin({
     __DEVONLY__: !production, 
+    __API_URL__: JSON.stringify(API_URL), 
   }),
 ];
 

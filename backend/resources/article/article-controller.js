@@ -29,6 +29,7 @@ module.exports = {
     debug('articleCtrl findArticles');
     return Article.find()
       .sort({ publication_date: 'desc' })
+      .select('-content')
       .where('publication_date').ne(null)
       .exec();
   },

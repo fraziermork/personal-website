@@ -4,6 +4,5 @@
     'fm.services',
   ]);
 })();
-
 require('./article-controller');
 require('./article-directive');

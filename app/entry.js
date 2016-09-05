@@ -8,6 +8,7 @@ require('./components/wrapper');
 require('./components/portfolio');
 require('./components/about');
 require('./components/blog');
+require('./components/sidebar');
 require('./components/article');
 require('./components/code-block');
 

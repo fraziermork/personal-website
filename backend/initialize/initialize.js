@@ -8,10 +8,11 @@ debug('about to seed database');
 
 mongooseManager.startConnectionToDatabase()
  .then(() => {
-   return seedDatabase.seedDatabaseWithArticles('../../data/articles');
+   return seedDatabase.seedDatabaseWithArticles(`${__dirname}/../../data/articles`);
  })
  .then(() => {
    debug('database seeded');
+   mongooseManager.closeConnectionToDatabase();
  })
  .catch((err) => {
    debug(err);
