@@ -84,7 +84,7 @@ module.exports = {
         loader: ExtractPlugin.extract('style', 'css!postcss!resolve-url!sass?sourceMap', { allChunks: true }),
       },
       { 
-        // version no regex unneeded
+        // version no. regex unneeded
         test:    /\.(png|jpe?g|ttf|eot|svg|woff(2)?)(\?v=\d+\.\d+\.\d+)?$/, 
         loaders: [
           'url?limit=10000', 

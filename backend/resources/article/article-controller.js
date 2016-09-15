@@ -10,9 +10,9 @@ module.exports = {
   /**  
    * findArticleById - Finds an article by id if it is published 
    *    
-   * @param  {type} articleId description   
+   * @param  {string} articleId description   
    * @return {type}           description   
-   */   
+   */     
   findArticleById(articleId) {
     debug('articleCtrl findArticleById');
     return Article.findOne({ _id: articleId })
