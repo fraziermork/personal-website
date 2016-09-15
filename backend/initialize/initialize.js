@@ -15,6 +15,6 @@ mongooseManager.startConnectionToDatabase()
    mongooseManager.closeConnectionToDatabase();
  })
  .catch((err) => {
-   debug(err);
+   debug('ERROR: \n', err);
  });
  
