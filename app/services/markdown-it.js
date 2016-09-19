@@ -1,5 +1,6 @@
 const MarkdownIt = require('markdown-it');
 const prism      = require('prismjs');
+const decorate   = require('markdown-it-decorate');
 
 (function() {
   angular.module('fm.services')
@@ -30,7 +31,7 @@ const prism      = require('prismjs');
         }
       }, 
     });
-    
+    md.use(decorate);
     return md;
   }   
     

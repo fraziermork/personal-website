@@ -140,7 +140,7 @@
                 data-ng-repeat="link in abtCtrl.links"
             >
               <a class="fm-About-link" 
-                 ng-href="link.url"
+                 ng-href="{{ link.url }}"
               >
                 <span class="fm-About-icon fa"
                       ng-class="link.classesToApply" 

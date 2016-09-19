@@ -15,7 +15,7 @@ module.exports = {
       .then((articles) => {
         debug('seedDatabaseWithArticles then');
         return Promise.all(articles.map((articleInfo) => {
-          return Article.create(articleInfo);
+          return Article.create(articleInfo); 
         }));
       });
   }

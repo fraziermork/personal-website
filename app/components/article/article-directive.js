@@ -6,7 +6,7 @@
       '$log',
       '$compile',
       'markdownIt', 
-      fmArticle
+      fmArticle 
     ]);
   
   function fmArticle($log, $compile, markdownIt) {

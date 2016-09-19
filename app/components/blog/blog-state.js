@@ -18,7 +18,7 @@
         data: {
           title: 'blog',
         }, 
-        resolve: {
+        resolve: { 
           articleList: ['$log', 'articleManager', 
             function(    $log,   articleManager) {
               $log.debug('attempting to resolve articles');

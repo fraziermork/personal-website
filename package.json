@@ -49,6 +49,7 @@
     "json-loader": "^0.5.4",
     "mailgun-js": "^0.7.12",
     "markdown-it": "^7.0.1",
+    "markdown-it-decorate": "^1.2.1",
     "mongoose": "^4.5.10",
     "morgan": "^1.7.0",
     "node-sass": "^3.8.0",

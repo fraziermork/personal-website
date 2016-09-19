@@ -20,7 +20,7 @@
   font-stretch:   ultra-expanded;
   margin:         0;
   @media (min-width: $screen-md-min) {
-    display:        inline-block;
+    display:        inline-block; 
   }
 }
 
@@ -29,7 +29,7 @@
   margin-left: 20px;
 }
 
-.fm-Portfolio-bodyWrapper {
+.fm-Portfolio-bodyWrapper { 
   
 }
 .fm-Porfolio-body {
@@ -42,14 +42,65 @@
 
 
 .fm-Portfolio-nav {
-  
+  display: inline-block;
 }
 
 .fm-Portfolio-linkWrapper {
   padding: 0;
-  margin:  10px;
+  margin:  10px 0;
+  width:   100%;
 }
 
 .fm-Portfolio-link {
+  width:   100%;
+}
 
+.fm-Portfolio-bottomWrapper {
+  // display:     flex;
+  // align-items: center;
+}
+
+
+.fm-Portfolio-skillList {
+  list-style-type: none;
+  padding:         $smallGutter;
+  display:         inline-block;
+  
+}
+
+.fm-Portfolio-skillWrapper {
+  max-width: 100%;
+  width:     20px;
+  margin:    $smallGutter;
+  display:   inline-block;
+  position:  relative;
+  // outline:       1px black solid;
+  
+  &:before {
+    content:        "";
+    display:        block;
+    padding-bottom: 100%;
+    margin:         0;
+  }
+}
+
+.fm-Portfolio-skillIcon {
+  position:    absolute; 
+  top:         0;
+  left:        0;
+  width:       100%;
+  height:      100%;
+  display:     flex;
+  align-items: center;
+  // padding:     $smallGutter;
+}
+
+.fm-Portfolio-skillIconWrapper {
+  
+}
+
+.fm-Portfolio-skillIconImg {
+  // min-width: 25px;
+  width:     100%;
+  max-width: 100%;
 }

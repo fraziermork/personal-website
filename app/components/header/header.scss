@@ -13,23 +13,23 @@
   text-transform:   uppercase;
   font-stretch:     ultra-expanded;
   
-  background: linear-gradient(180deg, white, white 90%, rgba(265, 265, 265, 0));
+  // background: linear-gradient(180deg, white, white 90%, rgba(265, 265, 265, 0));
   
   .fm-Header-wrapper {
     position:       relative;
     display:        flex;
-    flex-direction: row;
+    flex-direction: row; 
     align-items:    center;
   }
   .fm-Logo {
     // margin:           $headerGutter $headerGutter 0 $headerGutter;
     display:     inline-block;
-    margin-left: $headerGutter;
+    margin-left: $smallGutter;
     position:    absolute;
   }
   .fm-Header-title {
     display: inline-block;
-    margin:  0 0 0 #{$headerGutter + $headerGutter + 20px};
+    margin:  0 0 0 #{$headerGutter + $smallGutter};
     font-weight:      200;
   }
   .fm-Header-hamburger {
@@ -113,8 +113,8 @@
 
     // Class only relevant above breakpoint
     &.is-small {
-      height: $headerSmHeight;
-      
+      height:     $headerSmHeight;
+      box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
     }
     
     .fm-Header-wrapper {

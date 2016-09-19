@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const debug    = require('debug')('fm:Article');
 
 const articleSchema = new mongoose.Schema({
   title:            { type: String, required: true, unique: true, }, 
@@ -18,13 +19,14 @@ const articleSchema = new mongoose.Schema({
  * @return {type}       description 
  */ 
 function handlePublicationDate(value) {
-  return value ? new Date(value) : null;
+  console.log(value ? 'date value existed: ${value}' : 'date value was null');
+  return value ? new Date(value) : null; 
 }
 
 // If no publication date, then article isn't published 
 articleSchema.virtual('published')
   .get(function() {
-    return this.publication_date ? true : false;
+    return this.publication_date ? true : false; 
   });
 
 module.exports = mongoose.model('Article', articleSchema);

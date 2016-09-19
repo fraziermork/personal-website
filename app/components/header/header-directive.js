@@ -12,7 +12,7 @@
     return {
       template:     template, 
       restrict:     'E', 
-      controller:   'HeaderController', 
+      controller:   'HeaderController',  
       controllerAs: 'headCtrl', 
       
       link(scope, elem, attrs, ctrl) {
