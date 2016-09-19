@@ -1,9 +1,9 @@
 @import '../../style/fm-variables';
 
 .fm-Header {
-  display:          flex;
-  flex-direction:   row;
-  align-items:      center;
+  // display:          flex;
+  // flex-direction:   row;
+  // align-items:      center;
   height:           $headerLgHeight;
   position:         relative;
   background-color: white;
@@ -73,7 +73,7 @@
   // Mobile Only 
   @media (max-width: $screen-sm-max) {
     &.is-showingSideNavbar {
-      right: $navBarWidth;
+      // right: $navBarWidth;
       
       .fm-Header-hamburger {
         right: calc(#{$navBarWidth} + #{$medGutter});
