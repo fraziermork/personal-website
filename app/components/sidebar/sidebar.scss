@@ -1,0 +1,32 @@
+@import '../../style/fm-variables';
+
+.fm-Sidebar {
+  padding: $smallGutter;
+}
+
+.fm-Sidebar-title {
+  display:     inline-block;
+  margin-left: $medGutter;
+}
+
+.fm-Sidebar-list {
+  list-style-type: none;
+  padding:         $smallGutter $smallGutter $smallGutter $medGutter;
+}
+
+.fm-Sidebar-linkWrapper {
+  
+}
+
+.fm-Sidebar-link {
+  
+}
+
+.fm-Sidebar-articleDate {
+  display: inline-block;
+}
+
+.fm-Sidebar-articleTitle {
+  display:    inline-block;
+  margin-top: 0;
+}

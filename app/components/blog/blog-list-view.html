@@ -6,16 +6,21 @@
       <a class="fm-Article-previewLink"
          ui-sref="blog.article({ articleId: article._id })"
       >
-        <article class="fm-Article-preview">
-          <h4 class="fm-Article-previewTitle"
-              data-ng-bind="article.title"
-          ></h4>
-          <h6 class="fm-Article-previewSubtitle"
-              data-ng-bind="article.subtitle"
-          ></h6>
-          <p class="fm-Article-publicationDate"
-             data-ng-bind="article.publication_date"
-          ></p>
+        <article class="fm-Article-preview row">
+          <div class="col-xs-3">
+            <p class="fm-Article-publicationDate">{{ article.publication_date | date:'MMM dd, yyyy' }}</p>
+          </div>
+          <div class="col-xs-9">
+            <h4 class="fm-Article-previewTitle"
+                data-ng-bind="article.title"
+            ></h4>
+            <h6 class="fm-Article-previewSubtitle"
+                data-ng-bind="article.subtitle"
+            ></h6>
+          </div>
+          
+          
+          
         </article>
       </a>
     </li>

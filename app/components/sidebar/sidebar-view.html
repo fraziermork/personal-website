@@ -1,13 +1,48 @@
-<nav class="fm-Sidebar">
-  <ul class="fm-Sidebar-list">
-    <li class="fm-Sidebar-linkWrapper"
+<nav class="fm-Sidebar well hidden-xs hidden-sm">
+  
+      
+  
+  <!-- <button type="button" 
+          name="showArticles"
+          data-ng-click="sideCtrl.toggleVisibility()"
+          class="fm-Sidebar-toggleVisButton hidden-md hidden-lg btn btn-default pull-right"
+  >
+    <span class="fa fm-Sidebar-toggleButton fa-angle-down"
+          data-ng-hide="!sideCtrl.hidden"
+    ></span>
+    <span class="fa fm-Sidebar-toggleButton fa-angle-up"
+          data-ng-hide="sideCtrl.hidden"
+    ></span>
+  </button> -->
+  <h4 class="fm-Sidebar-title">Articles</h4>
+  
+  
+    
+    
+  
+  
+  
+  <ul class="fm-Sidebar-list"
+      data-ng-class="{ 
+        'hidden-xs': sideCtrl.hidden, 
+        'hidden-sm': sideCtrl.hidden 
+      }"
+  >
+    <li class="fm-Sidebar-linkWrapper row"
         data-ng-repeat="article in articles"
     >
       <a class="fm-Sidebar-link"
          ui-sref="blog.article({ articleId: article._id })"
          ui-sref-active="is-active"
-         data-ng-bind="article.title"
-      ></a>
+         
+      >
+        <div class="col-xs-4">
+          <span class="fm-Sidebar-articleDate">{{ article.publication_date | date:'MM/dd/yy' }}</span>
+        </div>
+        <div class="col-xs-8">
+          <h6 class="fm-Sidebar-articleTitle" data-ng-bind="article.title"></h6>
+        </div>
+      </a>
     </li>
   </ul>
 </nav>

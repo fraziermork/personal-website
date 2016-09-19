@@ -12,6 +12,7 @@
   font-family:      'Raleway', sans-serif;
   text-transform:   uppercase;
   font-stretch:     ultra-expanded;
+  padding:          $smallGutter;
   
   // background: linear-gradient(180deg, white, white 90%, rgba(265, 265, 265, 0));
   
@@ -25,11 +26,12 @@
     // margin:           $headerGutter $headerGutter 0 $headerGutter;
     display:     inline-block;
     margin-left: $smallGutter;
-    position:    absolute;
+    // position:    absolute;
   }
   .fm-Header-title {
     display: inline-block;
-    margin:  0 0 0 #{$headerGutter + $smallGutter};
+    margin-left: $medGutter;
+    // margin:  0 0 0 #{$headerGutter + $smallGutter};
     font-weight:      200;
   }
   .fm-Header-hamburger {
@@ -95,7 +97,6 @@
       top:              0;
       font-size:        1.25em;
     }
-    
     
   }
   

@@ -3,4 +3,5 @@
     'ui.router',
   ]);
 })();
+require('./sidebar-controller');
 require('./sidebar-directive');

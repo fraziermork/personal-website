@@ -1,19 +1,12 @@
 <section class="fm-Blog container-fluid">
   
-  <!-- <div ui-view="sidebar"></div> -->
-  <fm-sidebar articles="blogCtrl.articleList"></fm-sidebar>
-  
-  <section ui-view></section>
-  
-  <!-- <div class="row">
-    <ul class="fm-Blog-articleList col-xs-12 col-sm-8 col-sm-offset-1">
-      <li class="fm-Blog-article"
-          data-ng-repeat="article in blogCtrl.articles"
-      >
-        <fm-article data-article="article"></fm-article>
-      </li>
-    </ul>
-  </div> -->
-  
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <section ui-view></section>
+    </div>
+    <aside class="col-xs-12 col-md-3">
+      <fm-sidebar data-articles="blogCtrl.articleList"></fm-sidebar>
+    </aside>
+  </div>
   
 </section>

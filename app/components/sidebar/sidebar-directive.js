@@ -7,14 +7,20 @@
     fmSidebar,
   ]);
   
-  function fmSidebar() {
+  function fmSidebar($log) {
     return {
       template, 
       restrict: 'E',
       scope: {
         articles: '=',
       }, 
-      
+      controller:   'SidebarController', 
+      controllerAs: 'sideCtrl', 
+      // link(scope, elem, attrs, ctrl) {
+      //   
+      //   
+      //   
+      // }, 
     };  
   }
   
