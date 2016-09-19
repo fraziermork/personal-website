@@ -16,10 +16,15 @@
 
 .fm-Sidebar-linkWrapper {
   
+  
+  &.is-active {
+    color: $lightGreyPositive;
+  }
 }
 
 .fm-Sidebar-link {
-  
+  color:           inherit;
+  text-decoration: none;
 }
 
 .fm-Sidebar-articleDate {

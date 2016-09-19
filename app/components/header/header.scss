@@ -1,9 +1,9 @@
 @import '../../style/fm-variables';
 
 .fm-Header {
-  // display:          flex;
-  // flex-direction:   row;
-  // align-items:      center;
+  display:          flex;
+  flex-direction:   row;
+  align-items:      center;
   height:           $headerLgHeight;
   position:         relative;
   background-color: white;
@@ -63,10 +63,16 @@
       &:first-of-type {
         
       }
+      
+      &.is-active {
+        color: $lightGreyPositive;
+      }
     }
     
     .fm-Nav-link {
-      text-decoration: none;
+      // text-decoration: none;
+      color:           inherit;
+      
     }
   }
   

@@ -1,19 +1,5 @@
 <nav class="fm-Sidebar well hidden-xs hidden-sm">
   
-      
-  
-  <!-- <button type="button" 
-          name="showArticles"
-          data-ng-click="sideCtrl.toggleVisibility()"
-          class="fm-Sidebar-toggleVisButton hidden-md hidden-lg btn btn-default pull-right"
-  >
-    <span class="fa fm-Sidebar-toggleButton fa-angle-down"
-          data-ng-hide="!sideCtrl.hidden"
-    ></span>
-    <span class="fa fm-Sidebar-toggleButton fa-angle-up"
-          data-ng-hide="sideCtrl.hidden"
-    ></span>
-  </button> -->
   <h4 class="fm-Sidebar-title">Articles</h4>
   
   
@@ -30,11 +16,10 @@
   >
     <li class="fm-Sidebar-linkWrapper row"
         data-ng-repeat="article in articles"
+        ui-sref-active="is-active"
     >
       <a class="fm-Sidebar-link"
-         ui-sref="blog.article({ articleId: article._id })"
-         ui-sref-active="is-active"
-         
+         ui-sref="blog.article({ articleId: article._id })"   
       >
         <div class="col-xs-4">
           <span class="fm-Sidebar-articleDate">{{ article.publication_date | date:'MM/dd/yy' }}</span>
