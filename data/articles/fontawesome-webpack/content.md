@@ -1,6 +1,6 @@
 [Font Awesome](http://fontawesome.io/) is a great icon font library. The npm package comes with a sass version of the source files, which makes it possible to use things like the mixins that come with the package. Unfortunately, using these Font Awesome with Webpack isn't entirely straightforward--
 
-###### Normal webpack config for sass files
+#### Normal webpack config for sass files
 
 Normally, I load Sass files with a loader like this: 
 
@@ -17,7 +17,7 @@ I'm loading the files with the normal [sass-loader](https://www.npmjs.com/packag
 
 However, if I import Font Awesome or require Font Awesome using this loader, I'll get a webpack error. Font Awesome's distribution files import things using relative filepaths, but webpack will treat these as relative to the file that Font Awesome was imported or required into. As a result, webpack won't be able to find any of the files that font-awesome imports in, even if you have all the loaders necessary to deal with those files. 
 
-###### Webpack Config for Font Awesome
+#### Webpack Config for Font Awesome
 
 Luckily, there is a loader that can solve this problem, the [resolve-url-loader](https://www.npmjs.com/package/resolve-url-loader). It turns all the relative filepaths  that would normally confuse webpack into absolute filepaths that webpack can deal with. Once it's been npm installed, we can include it in our webpack config like this: 
 

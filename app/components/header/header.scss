@@ -1,9 +1,6 @@
 @import '../../style/fm-variables';
 
 .fm-Header {
-  // display:          flex;
-  // flex-direction:   row;
-  // align-items:      center;
   position:         relative;
   background-color: white;
   z-index:          1;
@@ -23,9 +20,7 @@
     height:         $headerLgHeight;
   }
   .fm-Logo {
-    // margin:           $headerGutter $headerGutter 0 $headerGutter;
     display:     inline-block;
-    // margin-left: $smallGutter;
     position:    absolute;
   }
   .fm-Header-title {
@@ -69,7 +64,6 @@
     }
     
     .fm-Nav-link {
-      // text-decoration: none;
       color:           inherit;
       
     }
@@ -78,11 +72,9 @@
   // Mobile Only 
   @media (max-width: $screen-sm-max) {
     &.is-showingSideNavbar {
-      // right: $navBarWidth;
       
       .fm-Header-hamburger {
         right: calc(#{$navBarWidth} + #{$medGutter});
-        // display: none;
       }
       
       .fm-Nav-screen {

@@ -27,18 +27,13 @@
             scope.$apply(() => {
               ctrl.headerIsSmall = false;
             });
-            
-            
-            
-            // elem.addClass('is-small');
-          
+
           // Remove the class when they scroll up   
           } else if (ctrl.headerIsSmall === false) {
             // $log.warn('shrinking header');
             scope.$apply(() => {
               ctrl.headerIsSmall = true;
             });
-            // elem.removeClass('is-small');
           }
         }
         
