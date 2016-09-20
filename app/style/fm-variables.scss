@@ -13,8 +13,10 @@ $headerSmHeight: 80px;
 $headerGutter:   50px;
 
 $navBarWidth:    40%;
+$logoWidth:      35px;
 
 $lightGreyPositive: #888;
+
 
 @mixin fm-heading() {
   font-family:      'Raleway', sans-serif;

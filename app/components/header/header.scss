@@ -1,10 +1,9 @@
 @import '../../style/fm-variables';
 
 .fm-Header {
-  display:          flex;
-  flex-direction:   row;
-  align-items:      center;
-  height:           $headerLgHeight;
+  // display:          flex;
+  // flex-direction:   row;
+  // align-items:      center;
   position:         relative;
   background-color: white;
   z-index:          1;
@@ -21,17 +20,17 @@
     display:        flex;
     flex-direction: row; 
     align-items:    center;
+    height:         $headerLgHeight;
   }
   .fm-Logo {
     // margin:           $headerGutter $headerGutter 0 $headerGutter;
     display:     inline-block;
-    margin-left: $smallGutter;
-    // position:    absolute;
+    // margin-left: $smallGutter;
+    position:    absolute;
   }
   .fm-Header-title {
     display: inline-block;
-    margin-left: $medGutter;
-    // margin:  0 0 0 #{$headerGutter + $smallGutter};
+    margin:  0 0 0 #{$logoWidth + $lgGutter};
     font-weight:      200;
   }
   .fm-Header-hamburger {
@@ -120,8 +119,11 @@
 
     // Class only relevant above breakpoint
     &.is-small {
-      height:     $headerSmHeight;
       box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
+      
+      .fm-Header-wrapper {
+        height: $headerSmHeight;
+      }
     }
     
     .fm-Header-wrapper {
