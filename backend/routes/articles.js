@@ -6,6 +6,7 @@ const express     = require('express');
 const router      = express.Router();
 
 // internal modules 
+const AppError    = require('../lib/app-error');
 const articleCtrl = require('../resources/article/article-controller');
 
 module.exports    = router;
@@ -28,4 +29,9 @@ router.get('/:id', (req, res, next) => {
       return res.status(200).json(article);
     })
     .catch(next);
+});
+
+router.all('*', function return404NotFound(_, res, next) {
+  debug('*404');
+  next(new AppError(404, 'hit /articles 404 route'));
 });

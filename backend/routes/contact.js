@@ -1,44 +1,53 @@
 'use strict';
 
-
-
-
-
-
-const express     = require('express');
-const bodyParser  = require('body-parser');
-const router      = express.Router();
-module.exports    = router;
-
-const AppError    = require('../lib/app-error');
-
-
+// environment variables 
 if (process.env.NODE_ENV === 'production' && (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN)) {
   throw new Error('Mailgun configuration required');
 }
 
+// npm modules 
+const debug       = require('debug')('fm:contactRouter');
+const express     = require('express');
+const bodyParser  = require('body-parser').json();
 const Mailgun     = require('mailgun-js');
 const mailgun     = new Mailgun({
   apiKey: process.env.MAILGUN_API_KEY, 
   domain: process.env.MAILGUN_DOMAIN,
 });
 
+// internal modules 
+const AppError    = require('../lib/app-error');
 
-router.on('/', bodyParser, (req, res, next) => {
-  // Error our if invalid request 
+// module exports 
+const router      = express.Router();
+module.exports    = router;
+
+
+router.post('/', bodyParser, (req, res, next) => {
+  debug('POST /contact');
+  
+  // Error out if invalid request 
   if (!req.body.name || !req.body.body || !req.body.from || !req.body.subject) {
     return next(new AppError(400, 'Incoming request missing required fields'));
   }
   
   // Attach required properties 
-  req.body.subject = `PORTFOLIO CONTACT: ${req.body.subject}`;
-  req.body.from    = process.env.npm_config_email;
+  req.body.to      = process.env.npm_config_email;
+  req.body.subject = `WEBSITE CONTACT: ${req.body.subject}`;
+  req.body.from    = `${req.body.name} <${req.body.from}>`;
+  delete req.body.name;
+  
   
   // Send email 
   mailgun.messages.send(req.body, (err, body) => {
     if (err) {
       next(new AppError(500, err));
     }
-    return res.status(204).send();
+    return res.status(204).end();
   });
+});
+
+router.all('*', function return404NotFound(_, res, next) {
+  debug('*404');
+  next(new AppError(404, 'hit /contact 404 route'));
 });

@@ -8,7 +8,7 @@ const morgan          = require('morgan');
 
 // internal modules
 const articlesRouter  = require('./routes/articles');
-// const contactRouter   = require('./routes/contact');
+const contactRouter   = require('./routes/contact');
 const errMidware      = require('./lib/err-midware');
 const AppError        = require('./lib/app-error');
 
@@ -22,7 +22,7 @@ mongooseManager.startConnectionToDatabase()
 // configure routes 
 router.use(morgan('dev'));
 router.use('/articles', articlesRouter);
-// router.use('/contact', contactRouter);
+router.use('/contact', contactRouter);
 router.all('*', function return404NotFound(_, res, next) {
   debug('*404');
   next(new AppError(404, 'hit route.all 404 route'));
