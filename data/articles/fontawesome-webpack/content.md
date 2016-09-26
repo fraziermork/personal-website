@@ -1,33 +1,40 @@
-[Font Awesome](http://fontawesome.io/) is a great icon font library. The npm package comes with a sass version of the source files, which makes it possible to use things like the mixins that come with the package. Unfortunately, using these Font Awesome with Webpack isn't entirely straightforward--
+[Font Awesome](http://fontawesome.io/) is a great icon font library. The fontawesome npm package comes with a sass version of the source files, which makes it possible to use all the mixins that fontawesome provides.
 
-#### Normal webpack config for sass files
+[Webpack](https://webpack.github.io/) is a popular library for bundling code. Unfortunately, the 'standard' way of loading sass files using webpack doesn't work with fontawesome's distribution sass files in its npm package--a little bit more configuration is needed. 
 
-Normally, I load Sass files with a loader like this: 
+#### 'Standard' Webpack Configuration for Sass 
+
+Normally, I would load Sass files with a loader like this: 
 
 ```javascript 
 {
   test:   /\.scss$/, 
-  loader: 'style!css!postcss!sass',
+  loader: 'style!css!sass',
 }
 ``` 
 <!-- {.data-read-only} -->
 
 
-I'm loading the files with the normal [sass-loader](https://www.npmjs.com/package/sass-loader), [style-loader](https://www.npmjs.com/package/style-loader), and [css-loader](https://www.npmjs.com/package/css-loader), as well as with the [postcss-loader](https://www.npmjs.com/package/postcss-loader) so that I have access to the [autoprefixer](https://www.npmjs.com/package/autoprefixer) plugin. 
+I'm loading the files with  [sass-loader](https://www.npmjs.com/package/sass-loader), [style-loader](https://www.npmjs.com/package/style-loader), and [css-loader](https://www.npmjs.com/package/css-loader), which is the way that the sass-loader documentation recommends loading them. 
 
-However, if I import Font Awesome or require Font Awesome using this loader, I'll get a webpack error. Font Awesome's distribution files import things using relative filepaths, but webpack will treat these as relative to the file that Font Awesome was imported or required into. As a result, webpack won't be able to find any of the files that font-awesome imports in, even if you have all the loaders necessary to deal with those files. 
+However, importing fontawesome into a sass file or requiring it into a javascript file will cause a webpack error. Fontawesome's distribution files import things using relative filepaths, but webpack will treat these as relative to the file that fontawesome was imported or required into, not relative to the file that was imported in. As a result, all of those relative paths become invalid, and webpack won't be able to find any of the font files it needs. 
 
-#### Webpack Config for Font Awesome
+#### Configuring Webpack for Fontawesome 
 
-Luckily, there is a loader that can solve this problem, the [resolve-url-loader](https://www.npmjs.com/package/resolve-url-loader). It turns all the relative filepaths  that would normally confuse webpack into absolute filepaths that webpack can deal with. Once it's been npm installed, we can include it in our webpack config like this: 
+Luckily, there is a loader designed to solve this problem, the [resolve-url-loader](https://www.npmjs.com/package/resolve-url-loader). It converts relative filepaths in sass files into absolute paths that webpack can handle. 
 
 ```javascript
 {
   test:   /\.scss$/, 
-  loader: 'style!css!postcss!resolve-url!sass?sourceMap'
+  loader: 'style!css!resolve-url!sass?sourceMap'
 },
 ```
-Because the resolve-url loader needs to translate relative urls into absolute urls, it needs to know where the import statements it is altering with are coming from. As a result, we also have to turn on sourceMap for the webpack loaders ahead of it. In this case, that's only the sass loader. 
+
+The only differences between this set of loaders and the one above are the inclusion of the resolve-url loader after the sass loader (webpack loaders run from right to left for some reason), and turning on source mapping for the sass loader. 
+
+Because the resolve-url loader needs to translate relative urls into absolute urls, it needs to know where the import statements it alters came from. So, source mapping must be turned on for the webpack loaders that run before the resolve-url loader. 
+
+#### Font File Loaders 
 
 Since Font Awesome provides fonts, we also need to include some loaders for font files.  
 
@@ -38,4 +45,4 @@ Since Font Awesome provides fonts, we also need to include some loaders for font
 }
 ```
 
-Files of these types (.ttf, .eot, .svg, .woff, and .woff2) will be loaded with the webpack [url-loader](https://www.npmjs.com/package/url-loader), which just inlines their content as a string. In this case, I've limited it by file size, so files over 10kb will be loaded with the [file-loader](https://www.npmjs.com/package/file-loader) instead. 
+Files of these types (.ttf, .eot, .svg, .woff, and .woff2) will be loaded with the webpack [url-loader](https://www.npmjs.com/package/url-loader), which just includes their content as a string into the file they were imported into. In this case, I've also included a file size limit, so files larger than 10kb will be loaded with the [file-loader](https://www.npmjs.com/package/file-loader) instead. 

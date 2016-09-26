@@ -13,9 +13,11 @@
     return {
       restrict: 'A', 
       
-      
       link(scope, element, attrs) {
-        $log.warn('TONIC ELEMENT: \n', element);
+        $log.log('code block attrs: \n', attrs);
+        $log.log('code block element: \n', element);
+        
+        
         $window.Tonic.createNotebook({
           element: element[0],  
           source:  attrs.code,
