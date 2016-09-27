@@ -24,10 +24,10 @@ module.exports    = router;
 
 
 router.post('/', bodyParser, (req, res, next) => {
-  debug('POST /contact');
+  debug('POST /contact \n', req.body);
   
   // Error out if invalid request 
-  if (!req.body.name || !req.body.body || !req.body.from || !req.body.subject) {
+  if (!req.body.name || !req.body.text || !req.body.from || !req.body.subject) {
     return next(new AppError(400, 'Incoming request missing required fields'));
   }
   
@@ -37,11 +37,13 @@ router.post('/', bodyParser, (req, res, next) => {
   req.body.from    = `${req.body.name} <${req.body.from}>`;
   delete req.body.name;
   
+  debug('req.body after formatting: \n', req.body);
   
   // Send email 
-  mailgun.messages.send(req.body, (err, body) => {
+  mailgun.messages().send(req.body, (err, body) => {
     if (err) {
-      next(new AppError(500, err));
+      debug('ERROR: \n', err);
+      return next(new AppError(500, err));
     }
     return res.status(204).end();
   });
@@ -49,5 +51,5 @@ router.post('/', bodyParser, (req, res, next) => {
 
 router.all('*', function return404NotFound(_, res, next) {
   debug('*404');
-  next(new AppError(404, 'hit /contact 404 route'));
+  return next(new AppError(404, 'hit /contact 404 route'));
 });

@@ -25,7 +25,7 @@ router.use('/articles', articlesRouter);
 router.use('/contact', contactRouter);
 router.all('*', function return404NotFound(_, res, next) {
   debug('*404');
-  next(new AppError(404, 'hit route.all 404 route'));
+  return next(new AppError(404, 'hit route.all 404 route'));
 });
 router.use(errMidware);
 

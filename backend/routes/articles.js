@@ -33,5 +33,5 @@ router.get('/:id', (req, res, next) => {
 
 router.all('*', function return404NotFound(_, res, next) {
   debug('*404');
-  next(new AppError(404, 'hit /articles 404 route'));
+  return next(new AppError(404, 'hit /articles 404 route'));
 });

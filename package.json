@@ -4,7 +4,7 @@
   "description": "This is a portfolio page I built to showcase my skills as a developer.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./backend/test/email-test.js",
     "start": "node server.js",
     "heroku-postbuild": "webpack; node ./backend/initialize/initialize.js",
     "start:dev": "webpack-dev-server --inline --hot",
