@@ -6,6 +6,9 @@
 
 // env variables 
 const API_PORT      = process.env.API_PORT || 3000;
+if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
+  throw new Error('Mailgun configuration required');
+}
 
 // npm modules 
 // const debug         = require('debug')('fm:test-email');
@@ -24,7 +27,7 @@ const emailData = {
   subject: '/contact test', 
   from:    process.env.npm_config_email, 
   name:    'Frazier Mork', 
-  body:    Date.now().toString(), 
+  text:    Date.now().toString(), 
 };
 
 
