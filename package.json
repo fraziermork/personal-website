@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./backend/test/email-test.js",
-    "start": "node server.js",
+    "start": "DEBUG=fm* node server.js",
     "heroku-postbuild": "webpack; node ./backend/initialize/initialize.js",
     "start:dev": "webpack-dev-server --inline --hot",
     "start:db": "mongod -dbpath=./data/db --smallfiles",
