@@ -29,10 +29,17 @@ module.exports   = {
       mongoose.connection.on('error', (err) => {
         debug('mongoose error \n', err);
       });
-      process.on('SIGINT', () => {
-        debug('app closing, closing mongoose connection');
-        this.closeConnectionToDatabase();
-      });
+      // process.on('SIGINT', () => {
+      //   debug('app closing, closing mongoose connection');
+      //   this.closeConnectionToDatabase()
+      //     .then(() => {
+      //       process.exit(0);
+      //     })
+      //     .catch((err) => {
+      //       debug(err);
+      //       process.exit(1);
+      //     });
+      // });
       
       // Connect to MongoDB 
       mongoose.connect(DB_PORT, (err) => {
@@ -48,9 +55,12 @@ module.exports   = {
    * @return {type}  description   
    */   
   closeConnectionToDatabase() {
-    debug('closeConnectionToDatabase');
-    mongoose.connection.close(() => {
-      debug('mongoose connection closed');
+    return new Promise((resolve, reject) => {
+      debug('closeConnectionToDatabase');
+      mongoose.connection.close(() => {
+        debug('mongoose connection closed');
+        return resolve();
+      });
     });
   },
 };
