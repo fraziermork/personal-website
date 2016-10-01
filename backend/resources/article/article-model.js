@@ -19,7 +19,7 @@ const articleSchema = new mongoose.Schema({
  * @return {type}       description 
  */ 
 function handlePublicationDate(value) {
-  console.log(value ? 'date value existed: ${value}' : 'date value was null');
+  console.log(value ? `date value existed: ${value}` : 'date value was null');
   return value ? new Date(value) : null; 
 }
 
