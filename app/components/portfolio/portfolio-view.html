@@ -40,16 +40,20 @@
             </ul>
             
             
-            <nav class="fm-Portfolio-nav  pull-right">
+            <nav class="fm-Portfolio-nav  pull-right"
+                 data-ng-if="project.deployLink || project.githubLink"
+            >
               <div class="fm-Portfolio-linkWrapper">
                 <a class="fm-Portfolio-link btn btn-primary"
                    ng-href="{{ project.deployLink }}"
+                   data-ng-if="project.deployLink"
                    role="button"
                 >View Project</a>
               </div>
               <div class="fm-Portfolio-linkWrapper">
                 <a class="fm-Portfolio-link btn btn-default"
                    ng-href="{{ project.githubLink }}"
+                   data-ng-if="project.githubLink"
                    role="button"
                 >View Code</a>
               </div>

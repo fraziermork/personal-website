@@ -35,7 +35,8 @@ if (production) {
       compress: {
         warnings: false,
       },
-    })
+    }), 
+    new webpack.optimize.DedupePlugin(),
   ]);
 }
 

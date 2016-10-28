@@ -21,7 +21,7 @@ console.log(fuzzums);
 
 In the code above, we called a function, 'Cat', and somehow got an object back. How did that happen? 
 
-Based on the title of this section, it's pretty obvious that the new keyword is responsible. The 'new' keyword creates a new object, then calls the function afterwards on that object. So, when the 'Cat' function attaches the property 'name' or breed or whatever onto 'this,' it is attaching those properties onto the newly instantiated object. 
+Based on the title of this section, it's pretty obvious that the new keyword is responsible. The 'new' keyword creates a new object, then calls the function afterwards on that object. So, wheo/n the 'Cat' function attaches the property 'name' or breed or whatever onto 'this,' it is attaching those properties onto the newly instantiated object. 
 
 The code below does pretty much the same thing, but less elegantly! Great! I've included it in an attempt to clarify what exactly the 'new' keyword is doing under-the-hood. 
 
