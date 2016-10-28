@@ -1,0 +1,25 @@
+<section class="fm-Article-listWrapper">
+  <ul class="fm-Article-list">
+    <li class="fm-Article-previewWrapper"
+        data-ng-repeat="article in blogListCtrl.articleList"
+    >
+      <a class="fm-Article-previewLink"
+         ui-sref="blog.article({ articleId: article._id })"
+      >
+        <article class="fm-Article-preview row">
+          <div class="col-xs-3">
+            <p class="fm-Article-publicationDate">{{ article.publication_date | date:'MMM dd, yyyy' }}</p>
+          </div>
+          <div class="col-xs-9">
+            <h4 class="fm-Article-previewTitle"
+                data-ng-bind="article.title"
+            ></h4>
+            <h6 class="fm-Article-previewSubtitle"
+                data-ng-bind="article.subtitle"
+            ></h6>
+          </div>
+        </article>
+      </a>
+    </li>
+  </ul>
+</section>

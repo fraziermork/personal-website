@@ -1,10 +1,6 @@
 @import '../../style/fm-variables';
 
 .fm-Header {
-  display:          flex;
-  flex-direction:   row;
-  align-items:      center;
-  height:           $headerLgHeight;
   position:         relative;
   background-color: white;
   z-index:          1;
@@ -12,22 +8,24 @@
   font-family:      'Raleway', sans-serif;
   text-transform:   uppercase;
   font-stretch:     ultra-expanded;
+  padding:          $smallGutter;
   
-  // background: linear-gradient(180deg, white, rgba(265, 265, 265, 0));
+  // background: linear-gradient(180deg, white, white 90%, rgba(265, 265, 265, 0));
   
   .fm-Header-wrapper {
+    position:       relative;
     display:        flex;
-    flex-direction: row;
+    flex-direction: row; 
     align-items:    center;
+    height:         $headerLgHeight;
   }
   .fm-Logo {
-    // margin:           $headerGutter $headerGutter 0 $headerGutter;
     display:     inline-block;
-    margin-left: $headerGutter;
+    position:    absolute;
   }
   .fm-Header-title {
     display: inline-block;
-    margin:  0 0 0 $headerGutter;
+    margin:  0 0 0 #{$logoWidth + $lgGutter};
     font-weight:      200;
   }
   .fm-Header-hamburger {
@@ -36,7 +34,8 @@
     right:    $medGutter;
   }
   .fm-Nav-screen {
-    display: none;
+    display:          none;
+    background-color: $lightGreyNegative;
   }
   
   .fm-Nav {
@@ -53,26 +52,29 @@
     .fm-Nav-item {
       display: block;
       float:   none;
-      margin:  $medGutter;
+      margin:  $lgGutter $medGutter;
       
       &:first-of-type {
         
       }
+      
+      &.is-active {
+        color: $lightGreyPositive;
+      }
     }
     
     .fm-Nav-link {
-      text-decoration: none;
+      color:           inherit;
+      
     }
   }
   
   // Mobile Only 
   @media (max-width: $screen-sm-max) {
     &.is-showingSideNavbar {
-      right: $navBarWidth;
       
       .fm-Header-hamburger {
         right: calc(#{$navBarWidth} + #{$medGutter});
-        // display: none;
       }
       
       .fm-Nav-screen {
@@ -82,18 +84,16 @@
         left:             0;
         right:            0;
         bottom:           0;
-        // background-color: rgba(0,0,0,.1);
       }
       
     }
     
     .fm-Nav {
       width:            $navBarWidth;
-      background-color: $lightGreyNegative;
+      background-color: white;
       top:              0;
-      
+      font-size:        1.25em;
     }
-    
     
   }
   
@@ -108,13 +108,14 @@
     right:          0;
     box-sizing:     border-box;
     transition:     all .25s ease-out;
-    
-    // background-color: red;
-    
+
     // Class only relevant above breakpoint
     &.is-small {
-      height: $headerSmHeight;
+      box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
       
+      .fm-Header-wrapper {
+        height: $headerSmHeight;
+      }
     }
     
     .fm-Header-wrapper {

@@ -1,13 +1,38 @@
 (function() {
   angular.module('fm.portfolio')
-    .controller('Controller', [
+    .controller('BlogController', [
       '$log',
-      
-      Controller,
+      'articleList', 
+      BlogController,
+    ])
+    .controller('BlogListController', [
+      '$log', 
+      'articleList',
+      BlogListController,
+    ])
+    .controller('BlogArticleController', [
+      '$log',
+      'article', 
+      BlogArticleController,
     ]);
   
-  function Controller() {
+  function BlogController($log, articleList) {
+    const vm       = this;
+    vm.articleList = articleList;
+    
     
   }
     
+  function BlogListController($log, articleList) {
+    const vm       = this;
+    vm.articleList = articleList;
+  
+  }
+  
+  function BlogArticleController($log, article) {
+    const vm   = this;
+    vm.article = article;
+    
+  }
+  
 })();

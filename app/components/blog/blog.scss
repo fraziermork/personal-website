@@ -1,0 +1,23 @@
+@import '../../style/fm-variables';
+
+.fm-Blog-articleList {
+  // padding-left: 0;
+}
+
+.fm-Article-list {
+  padding:         0;
+  list-style-type: none;
+}
+
+.fm-Article-previewLink {
+  text-decoration: none;
+  color:           inherit;
+}
+
+.fm-Article-previewTitle {
+  margin-top: 0;
+}
+
+.fm-Blog-wrapper {
+  // margin-left: $lgGutter;
+}

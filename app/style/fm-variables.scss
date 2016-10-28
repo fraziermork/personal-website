@@ -1,6 +1,6 @@
 @import '~font-awesome/scss/font-awesome';
+@import '~prismjs/themes/prism.css';
 @import 'bootstrap-pre-customizations';
-
 
 $lightGreyNegative: rgba(0, 0, 0, .2);
 
@@ -9,10 +9,14 @@ $medGutter:      10px;
 $lgGutter:       15px;
 
 $headerLgHeight: 300px;
-$headerSmHeight: 60px;
+$headerSmHeight: 80px;
 $headerGutter:   50px;
 
 $navBarWidth:    40%;
+$logoWidth:      35px;
+
+$lightGreyPositive: #888;
+
 
 @mixin fm-heading() {
   font-family:      'Raleway', sans-serif;

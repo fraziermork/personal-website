@@ -4,9 +4,16 @@
   "description": "This is a portfolio page I built to showcase my skills as a developer.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "start:dev": "webpack-dev-server --inline --hot"
+    "test": "mocha ./backend/test/email-test.js",
+    "start": "DEBUG=fm* node server.js",
+    "heroku-postbuild": "webpack; node ./backend/initialize/initialize.js",
+    "start:dev": "webpack-dev-server --inline --hot",
+    "start:db": "mongod -dbpath=./data/db --smallfiles",
+    "start:backend": "DEBUG=fm* nodemon backend/backend-dev-server.js",
+    "init-db": "node ./backend/initialize/initialize.js"
+  },
+  "engines": {
+    "node": "6.1.0"
   },
   "repository": {
     "type": "git",
@@ -28,29 +35,46 @@
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.13.2",
     "baggage-loader": "^0.2.4",
+    "bluebird": "^3.4.3",
+    "body-parser": "^1.15.2",
     "bootstrap-loader": "^1.2.0-beta.1",
     "bootstrap-sass": "^3.3.7",
     "clean-webpack-plugin": "^0.1.10",
     "css-loader": "^0.23.1",
+    "debug": "^2.2.0",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "font-awesome": "^4.6.3",
     "html-loader": "^0.4.3",
     "image-webpack-loader": "^2.0.0",
+    "json-loader": "^0.5.4",
     "mailgun-js": "^0.7.12",
+    "markdown-it": "^7.0.1",
+    "markdown-it-decorate": "^1.2.1",
+    "mongoose": "^4.5.10",
+    "morgan": "^1.7.0",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
+    "prismjs": "^1.5.1",
+    "raw-loader": "^0.5.1",
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "cors": "^2.8.0",
+    "del": "^2.2.2",
     "eslint": "^3.2.2",
     "eslint-config-angular": "^0.5.0",
     "eslint-plugin-angular": "^1.3.1",
     "eslint-plugin-import": "^1.12.0",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2",
     "webpack-dev-server": "^1.14.1"
   }
 }
