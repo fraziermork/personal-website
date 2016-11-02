@@ -1,7 +1,7 @@
 const prism      = require('prismjs');
 const MarkdownIt = require('markdown-it');
 const decorate   = require('markdown-it-decorate');
-// const mdTOC      = require('markdown-it-toc-and-anchor').default;
+const mdTOC      = require('markdown-it-toc-and-anchor').default;
 
 (function() {
   angular.module('fm.services')
@@ -36,15 +36,16 @@ const decorate   = require('markdown-it-decorate');
       }, 
     });
     md.use(decorate);
-    // md.use(mdTOC, {
-    //   tocClassName:  'fm-Article-toc', 
-    //   tocFirstLevel: 2, 
-    //   tocLastLevel:  6, 
-    //   tocCallback(tocMarkdown, tocArray, tocHtml) {
-    //     $log.debug('Table of contents constructed');
-    //     $log.log(tocMarkdown);
-    //   },
-    // });
+    md.use(mdTOC, {
+      tocClassName:  'fm-Article-toc', 
+      tocFirstLevel: 3, 
+      tocLastLevel:  6, 
+      anchorLink:    false,
+      // tocCallback(tocMarkdown, tocArray, tocHtml) {
+      //   $log.debug('Table of contents constructed');
+      //   $log.log(tocMarkdown);
+      // },
+    });
     return md;
   }   
     
