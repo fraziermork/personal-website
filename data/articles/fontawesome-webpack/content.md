@@ -6,7 +6,7 @@
 
 Normally, I would load Sass files with a loader like this: 
 
-```javascript 
+```javascript
 {
   test:   /\.scss$/, 
   loader: 'style!css!sass',

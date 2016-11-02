@@ -14,14 +14,16 @@
       restrict: 'A', 
       
       link(scope, element, attrs) {
+        let readOnly = element.parent().hasClass('data-read-only') ? true : false;
         $log.log('code block attrs: \n', attrs);
         $log.log('code block element: \n', element);
+        element.addClass('fm-code-block');
         
         
         $window.Tonic.createNotebook({
-          element: element[0],  
-          source:  attrs.code,
-          // readOnly: true, 
+          element:  element[0],  
+          source:   attrs.code,
+          readOnly: readOnly, 
           
           
           
@@ -36,10 +38,12 @@
             // $log.warn(element.find('iframe'));
             // $log.log(element.find('iframe').css('width'));
             // $log.log(element.find('iframe').css('margin'));
-            element.find('iframe').css({
-              width:  'calc(100% + 100px)', 
-              margin: '0 0 0 calc(-50px)', 
-            });
+            // if (!readOnly) {
+            //   element.find('iframe').css({
+            //     width:  'calc(100% + 200px)', 
+            //     margin: '0 0 0 calc(-100px)', 
+            //   });
+            // }
           }, 
           
           // /**          

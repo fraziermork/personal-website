@@ -29,7 +29,7 @@ const decorate   = require('markdown-it-decorate');
        */   
       highlight(str, lang) {
         if (lang === 'javascript') {
-          return `<pre><section fm-code-block data-code="${str}"></section></pre>`;
+          return `<section fm-code-block data-code="${str}"></section>`;
         } else {
           return prism.highlight(str, prism.languages[lang]);
         }
