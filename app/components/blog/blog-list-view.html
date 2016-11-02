@@ -4,7 +4,7 @@
         data-ng-repeat="article in blogListCtrl.articleList"
     >
       <a class="fm-Article-previewLink"
-         ui-sref="blog.article({ articleId: article._id })"
+         ui-sref="blog.article({ articleUrl: article.url })"
       >
         <article class="fm-Article-preview row">
           <div class="col-xs-3">
