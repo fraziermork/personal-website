@@ -27,7 +27,8 @@ module.exports  = {
             (info, content) => {              
               let articleInfo = JSON.parse(info);
               articleInfo.content = content;
-              debug('articleInfo: \n', articleInfo);
+              debug('articleInfo: \n', articleInfo.title);
+              
               return articleInfo;
             }
           );

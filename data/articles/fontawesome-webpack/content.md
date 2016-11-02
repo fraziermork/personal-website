@@ -29,6 +29,8 @@ Luckily, there is a loader designed to solve this problem, the [resolve-url-load
   loader: 'style!css!resolve-url!sass?sourceMap'
 },
 ```
+<!-- {.data-read-only} -->
+
 
 The only differences between this set of loaders and the one above are the inclusion of the resolve-url loader after the sass loader (webpack loaders run from right to left for some reason), and turning on source mapping for the sass loader. 
 
@@ -44,5 +46,7 @@ Since Font Awesome provides fonts, we also need to include some loaders for font
   loader: 'url?limit=10000'
 }
 ```
+<!-- {.data-read-only} -->
+
 
 Files of these types (.ttf, .eot, .svg, .woff, and .woff2) will be loaded with the webpack [url-loader](https://www.npmjs.com/package/url-loader), which just includes their content as a string into the file they were imported into. In this case, I've also included a file size limit, so files larger than 10kb will be loaded with the [file-loader](https://www.npmjs.com/package/file-loader) instead. 
