@@ -3,9 +3,9 @@
 // npm modules 
 const debug    = require('debug')('fm:seedDatabase');
 const Promise  = require('bluebird');
-const Article  = require('../../resources/article/article-model');
 
 // internal modules 
+const Article       = require('../../resources/article/article-model');
 const articleReader = require('./article-reader');
 
 module.exports = {
