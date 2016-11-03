@@ -6,7 +6,6 @@
       '$log',
       '$compile',
       '$anchorScroll',
-      'markdownIt', 
       fmArticle 
     ])
     .config([
@@ -26,7 +25,7 @@
     $anchorScroll.yOffset = 100;
   }
   
-  function fmArticle($log, $compile, $anchorScroll, markdownIt) {
+  function fmArticle($log, $compile, $anchorScroll) {
     return {
       template, 
       controller:       'ArticleController',     
@@ -40,8 +39,7 @@
       link(scope, element, attrs, ctrl) {
         $log.log(`rendering article ${ctrl.article.title}`);
         
-        // render the article and compile contents to trigger the code block directive embedded inside 
-        // let textToGoInsideArticle = markdownIt.render(ctrl.article.content);
+        // Compile html of article to trigger the code block directive embedded inside 
         let textToGoInsideArticle = ctrl.article.content;
         element.find('div').html(textToGoInsideArticle);
         $compile(element.contents())(scope);

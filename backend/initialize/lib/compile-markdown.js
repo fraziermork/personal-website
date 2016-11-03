@@ -46,9 +46,7 @@ md.use(mdContainer, 'codeblock', {
       // Add the content of the fenced code block inside as a data attribute to this block
       tokens[idx].attrPush(['data-code', tokens[idx + 1].content]);
       
-      // Hide the code block that would exist inside of it 
-      // tokens[idx + 1].attrPush(['hidden', 'true']);
-      // tokens.splice(idx, 1);
+      // Hide the code block that would exist inside of it. This removes the content to prevent duplication, but directive will have to delete the pre tags that markdown-it will insert anyway
       tokens[idx + 1].hidden = true;
       tokens[idx + 1].content = '';
       debug(tokens[idx + 1]);
