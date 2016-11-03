@@ -18,6 +18,7 @@
         // $log.log('code block attrs: \n', attrs);
         // $log.log('code block element: \n', element);
         element.addClass('fm-code-block');
+        element.find('pre').remove();
         
         
         $window.Tonic.createNotebook({

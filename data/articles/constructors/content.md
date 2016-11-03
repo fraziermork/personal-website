@@ -1,10 +1,11 @@
-## Constructor functions in Javascript
+@[toc]
 
 ### What are constructor functions? 
 Constructor functions are the Javascript way to to build objects with a certain set of properties. In essence, they act as a factory to build objects of a certain type.
 
 If you told me to write a function to act as a factory for car objects and I didn't know anything about constructor functions, I might write something like this: 
 
+::: codeblock
 ```javascript 
 // Faux constructor function 
 function transformObjectIntoACar(objectToTransform, brand, color) {
@@ -22,6 +23,7 @@ transformObjectIntoACar(myCar, 'Honda', 'blue');
 // Check out my new ride:  
 console.log(myCar);
 ```
+::: 
 
 I've given the myCar object three properties that can be customized based on the arguments passed in because not every car is a blue Honda (even though it seems that way sometimes). 
 
@@ -31,6 +33,7 @@ Except, this code isn't really that great. The purpose of the code isn't clear u
 
 Constructor functions will solve these problems. Check this out: 
 
+::: codeblock
 ```javascript 
 // Car constructor object 
 function Car(brand, color) {
@@ -45,6 +48,7 @@ var myCar = new Car('Honda', 'black');
 // Check out my new ride:  
 console.log(myCar);
 ```
+::: 
 
 This does exactly the same thing, but it's a little clearer. Now when I want to build a new car, that's exactly what I write! 
 
@@ -73,6 +77,7 @@ Our cars are static right now--they don't do anything. I can make them more exci
 
 Here is a slightly more interesting car: 
 
+::: codeblock
 ```javascript
 // Car constructor object 
 function Car(brand, color) {
@@ -95,11 +100,13 @@ myCar.turnOn();
 // Check out my new ride:  
 console.log(myCar);
 ```
+::: 
 
 IT'S ALIVE!!! I've attached a method that can change properties on the object! Slightly more interesting indeed.
 
 What if there's more than one car? In keeping with the tradition of owning nondescript cars, lets make a silver Toyota too: 
 
+::: codeblock
 ```javascript
 // Car constructor object 
 function Car(brand, color) {
@@ -126,6 +133,7 @@ var myOtherCar = new Car('Toyota', 'silver');
 console.log('myCar: ', myCar);
 console.log('myOtherCar: ', myOtherCar);
 ```
+::: 
 
 I've built two cars for myself, but I only turned myCar on--the Toyota is still off because all of those properties are stored independently on every instance of Car. 
 
@@ -134,6 +142,7 @@ Not sharing properties between cars makes sense for properties like 'on', becaus
 ### Prototypes in Javascript 
 Every constructor function has a [prototype](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes) object, which acts as a cache of properties that are shared between all objects instantiated with that constructor. So, if I attach something to the Car prototype, all of my cars will have access to it. What's more, there will only be one version of it in memory, the version on the prototype, so nothing is duplicated that doesn't need to be. 
 
+::: codeblock
 ```javascript 
 // Car constructor function 
 function Car(brand, color) {
@@ -160,6 +169,7 @@ var myOtherCar = new Car('Toyota', 'silver');
 console.log('myCar: ', myCar);
 console.log('myOtherCar: ', myOtherCar);
 ```
+::: 
 
 We've achieved preschool level and learned how to share! Fantastic! You've probably used methods attached to a prototype before, like if you've ever used 'push' to add values to an array. Arrays have a constructor function, (named [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)), and attached to [Array.prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype) are all the [array methods like push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype#Methods). Inside of these methods, 'this' refers to the instance that the method was called from. In Javascript, 'this' inside of any function refers to the object that it was called from (but it might not always be obvious what that means).
 
@@ -177,6 +187,7 @@ One thing worth noting is that attaching a property to an instance may 'shadow' 
 
 Prepare yourself, because now we're going to start to get into the weird stuff. Try to guess what the console logs at the bottoms will show before running the code: 
 
+::: codeblock
 ```javascript 
 // Car constructor function 
 function Car(brand, color) {
@@ -218,6 +229,7 @@ console.log('myOtherCar.placesVisited: ', myOtherCar.placesVisited);
 console.log('myCar: ', myCar);
 console.log('myOtherCar: ', myOtherCar);
 ```
+::: 
 
 Now it looks like both cars visited Portland, but oddly only myOtherCar had it's number of wheels change. If you expected that to happen, hats off to you. If you didn't expect that, I probably seem like wizard right now. Fortunately, Javascript isn't magic--let's reason our way through what happened. 
 
@@ -233,6 +245,7 @@ That's cool and all, but sometimes it's nice to able to describe things as inher
 
 That can be done, but it's more complicated: 
 
+::: codeblock
 ```javascript 
 // Define Vehicle constructor 
 function Vehicle(brand) {
@@ -268,6 +281,7 @@ myCar.visitPlace('Portland, OR');
 // Check out my new ride: 
 console.log(myCar);
 ```
+::: 
 
 Instead of panicking, let's break this down into chunks and walk through them one by one. 
 
@@ -285,7 +299,7 @@ If you want some exercises to practice this sort of thing, [nodeschool](https://
 
 
 
-### TL;DR: 
+### TL;DR
  * Constructor functions are templates that define a kind of object. 
  * Objects can be built from a constructor function using the 'new' operator. 
  * Constructor function prototypes are objects that contain properties that should be shared among all instances of that constructor (usually methods, but not always)

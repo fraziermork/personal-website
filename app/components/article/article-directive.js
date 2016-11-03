@@ -39,12 +39,13 @@
       
       link(scope, element, attrs, ctrl) {
         $log.log(`rendering article ${ctrl.article.title}`);
+        
+        // render the article and compile contents to trigger the code block directive embedded inside 
         let textToGoInsideArticle = markdownIt.render(ctrl.article.content);
-        // $log.log('RENDERED HTML: \n', textToGoInsideArticle);
         element.find('div').html(textToGoInsideArticle);
         $compile(element.contents())(scope);
-        $log.log('element.contents(): ', element.contents());
         
+        // Check if there is a table of contents 
         let ulElements = element.find('ul');
         let tableOfContentsUl = null;
         for (let i = 0; i < ulElements.length; i++) {
@@ -54,21 +55,16 @@
             break;
           }
         }
-        $log.warn(tableOfContentsUl);
         
-        
+        // If there is a table of contents, attach the event handlers 
         if (tableOfContentsUl) {
+          tableOfContentsUl.wrap('<nav></nav>');
           tableOfContentsUl.on('click', (event) => {
             event.preventDefault();
-            $log.log(event);
             let anchorHash = event.target.getAttribute('href');
-            $log.log(anchorHash);
-            $log.log(angular.element(document)[0].getElementById(anchorHash.slice(1)));
-            
-            $log.warn(anchorHash);
-            $log.log($anchorScroll.yOffset);
-            $anchorScroll(anchorHash.slice(1));
-            $log.log($anchorScroll.yOffset);
+            if (anchorHash) {
+              $anchorScroll(anchorHash.slice(1));
+            }
           });
         }
         

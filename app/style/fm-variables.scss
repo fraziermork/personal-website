@@ -1,6 +1,8 @@
 @import '~font-awesome/scss/font-awesome';
-@import '~prismjs/themes/prism.css';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins';
 @import 'bootstrap-pre-customizations';
+@import '~prismjs/themes/prism.css';
 
 $lightGreyNegative: rgba(0, 0, 0, .2);
 
