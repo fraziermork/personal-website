@@ -8,6 +8,7 @@ const articleSchema = new mongoose.Schema({
   content:          { type: String, required: true, },
   subtitle:         { type: String, },
   publication_date: { type: Date, set: setPublicationDate, }, 
+  tableOfContents:  { type: String, },
   url:              { 
     type:     String, 
     unique:   true, 

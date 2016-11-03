@@ -11,3 +11,11 @@
   border:           1px solid $well-border;
   border-radius:    $border-radius-base;
 } 
+
+.fm-Article-body {
+  p {
+    // text-indent: 1em;
+    margin-bottom: 1em;
+    line-height:   1.5;
+  }
+}

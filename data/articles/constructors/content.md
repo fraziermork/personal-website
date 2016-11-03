@@ -1,5 +1,3 @@
-@[toc]
-
 ### What are constructor functions? 
 Constructor functions are the Javascript way to to build objects with a certain set of properties. In essence, they act as a factory to build objects of a certain type.
 

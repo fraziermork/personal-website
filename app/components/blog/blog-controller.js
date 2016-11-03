@@ -33,7 +33,7 @@
   function BlogArticleController($log, $state, article) {
     const vm   = this;
     vm.article = article;
-    
+    $log.warn('BlogArticleController', article);
     $state.current.data.title = article.title;
     
   }

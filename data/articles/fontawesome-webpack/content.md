@@ -1,5 +1,3 @@
-@[toc]
-
 [Font Awesome](http://fontawesome.io/) is a great icon font library. The fontawesome npm package comes with a sass version of the source files, which makes it possible to use all the mixins that fontawesome provides.
 
 [Webpack](https://webpack.github.io/) is a popular library for bundling code. Unfortunately, the 'standard' way of loading sass files using webpack doesn't work with fontawesome's distribution sass files in its npm package--a little bit more configuration is needed. 
