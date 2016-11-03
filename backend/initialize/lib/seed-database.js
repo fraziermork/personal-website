@@ -13,7 +13,6 @@ module.exports = {
     debug('seedDatabaseWithArticles');
     return articleReader.readEachArticle(inputPathToArticlesDirectory)
       .then((articles) => {
-        debug('seedDatabaseWithArticles then');
         return Promise.all(articles.map((articleInfo) => {
           // Attach the title as the url property so that t can be formatted by the setter on the model 
           articleInfo.url = articleInfo.title;

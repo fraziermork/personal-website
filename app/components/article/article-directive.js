@@ -41,7 +41,8 @@
         $log.log(`rendering article ${ctrl.article.title}`);
         
         // render the article and compile contents to trigger the code block directive embedded inside 
-        let textToGoInsideArticle = markdownIt.render(ctrl.article.content);
+        // let textToGoInsideArticle = markdownIt.render(ctrl.article.content);
+        let textToGoInsideArticle = ctrl.article.content;
         element.find('div').html(textToGoInsideArticle);
         $compile(element.contents())(scope);
         

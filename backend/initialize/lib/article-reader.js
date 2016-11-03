@@ -1,9 +1,11 @@
 'use strict';
 
-const debug    = require('debug')('fm:articleReader');
-const Promise  = require('bluebird');
-const fs       = Promise.promisifyAll(require('fs'));
-const path     = require('path');
+const debug     = require('debug')('fm:articleReader');
+const Promise   = require('bluebird');
+const fs        = Promise.promisifyAll(require('fs'));
+const path      = require('path');
+const compileMd = require('./compile-markdown');
+
 
 module.exports  = {
   
@@ -26,7 +28,7 @@ module.exports  = {
             fs.readFileAsync(path.join(pathToRead, directoryName, 'content.md'), 'utf8'),
             (info, content) => {              
               let articleInfo = JSON.parse(info);
-              articleInfo.content = content;
+              articleInfo.content = compileMd.render(content);
               debug('articleInfo: \n', articleInfo.title);
               
               return articleInfo;
