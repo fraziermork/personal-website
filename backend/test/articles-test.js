@@ -18,13 +18,15 @@ const manageServer = require('./lib/manage-server')(server, API_PORT);
 const Article      = require('../resources/article/article-model');
 
 let dummyPublishedArticle = {
-  title:            'dummyPublishedArticle', 
+  title:            'Dummy Published Article', 
+  url:              'Dummy Published Article', 
   subtitle:         'hello', 
   publication_date: '2016-08-30',
   content:          '# markdown',
 };
 let dummyUnpublishedArticle = {
-  title:            'dummyUnpublishedArticle', 
+  title:            'Dummy Unpublished Article', 
+  url:              'Dummy Unpublished Article', 
   subtitle:         'world', 
   publication_date: null,
   content:          '# markdown',
@@ -52,7 +54,7 @@ describe('/articles', () => {
       .catch(done);
   });
   
-  it('it should return all published articles', (done) => {
+  it('should return all published articles', (done) => {
     request.get('/articles')
       .end((err, res) => {
         expect(err).to.equal(null);
@@ -61,12 +63,13 @@ describe('/articles', () => {
         expect(res.body.length).to.equal(1);
         expect(res.body[0]._id).to.equal(dummyPublishedArticle._id.toString());
         expect(res.body[0]).to.not.have.property('content');
+        expect(res.body[0]).to.have.property('url');
         done();
       });
   });
   
-  it('it should let you get an article by id', (done) => {
-    request.get(`/articles/${dummyPublishedArticle._id}`)
+  it('should be able to retrieve an article by id', (done) => {
+    request.get(`/articles/id/${dummyPublishedArticle._id}`)
       .end((err, res) => {
         expect(err).to.equal(null);
         expect(res.status).to.equal(200);
@@ -76,4 +79,15 @@ describe('/articles', () => {
       });
   });
   
+  it('should be able to retrieve an article by url', (done) => {
+    request.get(`/articles/${dummyPublishedArticle.url}`)
+      .end((err, res) => {
+        expect(err).to.equal(null);
+        expect(res.status).to.equal(200);
+        expect(res.body.url).to.equal(dummyPublishedArticle.url.toString());
+        expect(res.body._id).to.equal(dummyPublishedArticle._id.toString());
+        expect(res.body.content).to.equal(dummyPublishedArticle.content.toString());
+        done();
+      });
+  });
 });

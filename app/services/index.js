@@ -5,5 +5,4 @@
 })();
 
 require('./contact-me');
-require('./markdown-it');
 require('./article-manager');

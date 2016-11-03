@@ -34,14 +34,14 @@
       })
       .state('blog.article', {
         template:     require('./blog-article-view.html'), 
-        url:          '/article/:articleId', 
+        url:          '/article/:articleUrl', 
         controller:   'BlogArticleController', 
         controllerAs: 'blogArtCtrl', 
         resolve: {
           article: ['$log', '$stateParams', 'articleManager', 
             function($log,   $stateParams,   articleManager) {
-              $log.debug(`attempting to resolve article with id ${$stateParams.articleId}`);
-              return articleManager.getArticleById($stateParams.articleId);
+              $log.debug(`attempting to resolve article with id ${$stateParams.articleUrl}`);
+              return articleManager.getArticleByUrl($stateParams.articleUrl);
             }
           ], 
         },

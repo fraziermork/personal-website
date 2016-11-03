@@ -14,6 +14,7 @@
   .config([
     '$stateProvider', 
     '$urlRouterProvider',
+    '$uiViewScrollProvider',
     fmAppConfig,
   ]);
   

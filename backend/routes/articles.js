@@ -21,9 +21,19 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
-router.get('/:id', (req, res, next) => {
-  debug('GET /articles/:id');
+router.get('/id/:id', (req, res, next) => {
+  debug('GET /articles/id/:id');
   articleCtrl.findArticleById(req.params.id)
+    .then((article) => {
+      debug('article: ', article);
+      return res.status(200).json(article);
+    })
+    .catch(next);
+});
+
+router.get('/:url', (req, res, next) => {
+  debug('GET /articles/:url');
+  articleCtrl.findArticleUrl(req.params.url)
     .then((article) => {
       debug('article: ', article);
       return res.status(200).json(article);

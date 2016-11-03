@@ -28,9 +28,9 @@ const baseUrl = `${__API_URL__}/articles`;
         });
       }, 
       
-      getArticleById(id) {
+      getArticleByUrl(articleUrl) {
         return $q((resolve, reject) => {
-          $http.get(`${baseUrl}/${id}`)
+          $http.get(`${baseUrl}/${articleUrl}`)
             .then((res) => {
               $log.debug('successfully retrieved article: \n', res.data);
               return resolve(res.data);

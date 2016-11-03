@@ -14,35 +14,13 @@
       restrict: 'A', 
       
       link(scope, element, attrs) {
-        $log.log('code block attrs: \n', attrs);
-        $log.log('code block element: \n', element);
-        
+        // Hack to remove the pre tags that markdown it automatically puts in whenever it sees a fenced code block 
+        element.find('pre').remove();
         
         $window.Tonic.createNotebook({
-          element: element[0],  
-          source:  attrs.code,
-          // readOnly: true, 
-          
-          
-          
-          /**          
-           * onLoad - Runs when the notebook has finished loading 
-           *            
-           * @param  {object} nb The Tonic notebook                      
-           */           
-          onLoad(nb) {
-            $log.debug('Tonic notebook loaded \n', nb);
-          }, 
-          
-          /**          
-           * onEvaluate - Runs whenever the notebook is evaluated
-           *            
-           * @param  {object} nb The Tonic notebook                      
-           */
-          onEvaluate(nb) {
-            $log.debug('Tonic notebook evaluated \n', nb);
-          },
-          
+          element:  element[0],  
+          source:   attrs.code,
+          readOnly: false, 
         });
       },
     };

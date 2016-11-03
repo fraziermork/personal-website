@@ -9,9 +9,11 @@ debug('about to seed database');
 
 mongooseManager.startConnectionToDatabase()
  .then(() => {
+   debug('articles removed');
    Article.find({}).remove().exec();
  })
  .then(() => {
+   debug('seeding database');
    return seedDatabase.seedDatabaseWithArticles(`${__dirname}/../../data/articles`);
  })
  .then(() => {
@@ -20,5 +22,6 @@ mongooseManager.startConnectionToDatabase()
  })
  .catch((err) => {
    debug('ERROR: \n', err);
+   mongooseManager.closeConnectionToDatabase();
  });
  
