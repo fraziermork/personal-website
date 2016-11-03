@@ -247,7 +247,7 @@ That can be done, but it's more complicated:
 
 ::: codeblock
 ```javascript 
-// Define Vehicle constructor 
+// Define Vehicle constructor and add turnOn method to its prototype
 function Vehicle(brand) {
   this.on    = false;
   this.brand = brand;
@@ -262,6 +262,7 @@ function Car(brand, color) {
   this.placesVisited = [];
   this.color         = color;
 }
+
 // Replace Car.prototype with an empty object inheriting from Vehicle.prototype 
 Car.prototype = Object.create(Vehicle.prototype);
 
