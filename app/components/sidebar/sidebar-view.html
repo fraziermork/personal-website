@@ -7,9 +7,10 @@
       >
         <a class="fm-Sidebar-link"
            ng-href="# + section.anchor"
-           data-ng-click="sideCtrl.handleClickOnTableOfContentsLink($event, section.anchor)"
-           data-ng-bind="section.content"
-        ></a>
+           data-ng-click="sideCtrl.handleClickOnTableOfContentsLink($event, section.anchor)"   
+        >
+          <h6 class="fm-Sidebar-articleTitle" data-ng-bind="section.content"></h6>
+        </a>
       </li>
     </ul>
     

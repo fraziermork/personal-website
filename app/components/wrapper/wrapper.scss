@@ -6,11 +6,13 @@
 }
 
 .fm-Wrapper-title {
-  font-family:    'Raleway', sans-serif;
-  font-weight:    200;
-  text-transform: uppercase;
-  font-stretch:   ultra-expanded;
-  font-size:      5em;
-  width:          100%;
-  margin-bottom:  $lgGutter;
+  font-family:   'Raleway', sans-serif;
+  font-weight:   200;
+  line-height:   1.5;
+  font-stretch:  ultra-expanded;
+  font-size:     5em;
+  width:         100%;
+  margin-bottom: 1.5em;
+  // margin-bottom:  $lgGutter;
+  // text-transform: uppercase;
 }
