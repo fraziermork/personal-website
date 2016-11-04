@@ -1,7 +1,7 @@
 @import '../../style/fm-variables';
 
 .fm-Portfolio {
-  font-family: 'Lato', sans-serif;
+  @include fm-text();
 }
 
 .fm-Portfolio-project {

@@ -8,7 +8,7 @@
 }
 // ABOUT ME
 .fm-About-blurb {
-  font-family: 'Lato', sans-serif;
+  @include fm-text();
 }
 
 
@@ -19,10 +19,10 @@
 
 // SKILLS
 .fm-About-skillList {
+  @include fm-text();
   list-style-type: none;
   padding:         0;
   width:           100%;
-  font-family:     'Lato', sans-serif;
 }
 .fm-About-skillWrapper {
   display:    inline-block;

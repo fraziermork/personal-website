@@ -22,9 +22,11 @@
   }
 }
 
-body, html {
+html, body {
+  @include fm-text();
   font-size: 14px;
-}
-body {
   
+  @media (min-width: $screen-md-min) {
+      font-size: 14px;
+  }
 }

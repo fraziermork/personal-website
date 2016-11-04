@@ -1,8 +1,8 @@
 <nav class="fm-Sidebar">
   <section class="well">
     <h4 class="fm-Sidebar-title">Table of Contents:</h4>
-    <ul class="fm-Sidebar-list fm-Sidebar-toc">
-      <li class="fm-Sidebar-sectionWrapper"
+    <ul class="fm-Sidebar-list">
+      <li class="fm-Sidebar-linkWrapper"
           data-ng-repeat="section in sideCtrl.article.tableOfContents"
       >
         <div class="fm-Sidebar-caretWrapper">
@@ -15,8 +15,8 @@
            ng-href="# + section.anchor"
            data-ng-click="sideCtrl.handleClickOnTableOfContentsLink($event, section.anchor)"   
         >
-          <div class="fm-Sidebar-sectionTitleWrapper">
-            <h6 class="fm-Sidebar-sectionTitle" data-ng-bind="section.content"></h6>
+          <div class="fm-Sidebar-linkTextWrapper">
+            <p class="fm-Sidebar-linkText" data-ng-bind="section.content"></p>
           </div>
         </a>
       </li>
@@ -26,18 +26,21 @@
   <section class="well hidden-xs hidden-sm">
     <h4 class="fm-Sidebar-title">Other Articles:</h4>
     <ul class="fm-Sidebar-list">
-      <li class="fm-Sidebar-linkWrapper row"
+      <li class="fm-Sidebar-linkWrapper"
           data-ng-repeat="article in sideCtrl.articles"
           ui-sref-active="is-active"
       >
+        <div class="fm-Sidebar-caretWrapper">
+          <div class="fm-Sidebar-caret">
+            <span class="fa fa-caret-right"></span>
+          </div>
+        </div>
+        
         <a class="fm-Sidebar-link"
            ui-sref="blog.article({ articleUrl: article.url })"   
         >
-          <div class="col-xs-3">
-            <span class="fm-Sidebar-articleDate">{{ article.publication_date | date:'MM/dd/yy' }}</span>
-          </div>
-          <div class="col-xs-9">
-            <h6 class="fm-Sidebar-articleTitle" data-ng-bind="article.title"></h6>
+          <div class="fm-Sidebar-linkTextWrapper">
+            <p class="fm-Sidebar-linkText" data-ng-bind="article.title"></p>
           </div>
         </a>
       </li>
