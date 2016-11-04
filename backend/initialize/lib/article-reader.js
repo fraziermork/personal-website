@@ -34,9 +34,9 @@ module.exports  = {
             .then((articleInfo) => {
               return new Promise((resolve, reject) => {
                 articleInfo.content = compileMd.render(articleInfo.content, {
-                  tocCallback(tocMarkdown, tocArray, tocHtml) {
-                    debug(tocHtml);
-                    articleInfo.tableOfContents = tocHtml;
+                  tocCallback(tocMarkdown, tocArray, tocHtml) {                 
+                    articleInfo.tableOfContents = tocArray;
+                    debug(articleInfo);
                     resolve(articleInfo);
                   },
                 });

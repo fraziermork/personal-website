@@ -1,25 +1,33 @@
-<section class="fm-Article-listWrapper">
-  <ul class="fm-Article-list">
-    <li class="fm-Article-previewWrapper"
-        data-ng-repeat="article in blogListCtrl.articleList"
-    >
-      <a class="fm-Article-previewLink"
-         ui-sref="blog.article({ articleUrl: article.url })"
+<section class="fm-Article-listWrapper container">
+  <div class="row">
+    
+    <ul class="fm-Article-list col-xs-12 col-md-9">
+      <li class="fm-Article-previewWrapper"
+          data-ng-repeat="article in blogListCtrl.articleList"
       >
-        <article class="fm-Article-preview row">
-          <div class="col-xs-3">
-            <p class="fm-Article-publicationDate">{{ article.publication_date | date:'MMM dd, yyyy' }}</p>
-          </div>
-          <div class="col-xs-9">
-            <h4 class="fm-Article-previewTitle"
-                data-ng-bind="article.title"
-            ></h4>
-            <h6 class="fm-Article-previewSubtitle"
-                data-ng-bind="article.subtitle"
-            ></h6>
-          </div>
-        </article>
-      </a>
-    </li>
-  </ul>
+        <a class="fm-Article-previewLink"
+           ui-sref="blog.article({ articleUrl: article.url })"
+        >
+          <article class="fm-Article-preview row">
+            <div class="col-xs-3">
+              <p class="fm-Article-publicationDate">{{ article.publication_date | date:'MMM dd, yyyy' }}</p>
+            </div>
+            <div class="col-xs-9">
+              <h4 class="fm-Article-previewTitle"
+                  data-ng-bind="article.title"
+              ></h4>
+              <h6 class="fm-Article-previewSubtitle"
+                  data-ng-bind="article.subtitle"
+              ></h6>
+            </div>
+          </article>
+        </a>
+      </li>
+    </ul>
+    
+    <aside class="col-xs-12 col-md-3">
+      <fm-sidebar data-articles="blogCtrl.articleList"></fm-sidebar>
+    </aside>
+  </div>
+  
 </section>

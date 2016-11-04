@@ -20,8 +20,6 @@
   function BlogController($log, articleList) {
     const vm       = this;
     vm.articleList = articleList;
-    
-    
   }
     
   function BlogListController($log, articleList) {

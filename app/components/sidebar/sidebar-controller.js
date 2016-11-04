@@ -3,11 +3,19 @@
   .controller('SidebarController', [
     '$log', 
     '$scope', 
+    '$anchorScroll',
     SidebarController, 
   ]);
   
-  function SidebarController($log, $scope) {
-    const vm = this;
+  function SidebarController($log, $scope, $anchorScroll) {
+    const vm                            = this;
+    vm.handleClickOnTableOfContentsLink = handleClickOnTableOfContentsLink;
+    
+    
+    function handleClickOnTableOfContentsLink($event, anchorLink) {
+      $event.preventDefault();
+      $anchorScroll(anchorLink);
+    }
     
     // Properties
     // vm.hidden = true;

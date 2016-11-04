@@ -6,25 +6,25 @@
       '$log',
       '$compile',
       '$anchorScroll',
-      fmArticle 
-    ])
-    .config([
-      '$uiViewScrollProvider',
-      configUiViewScrollProvider,
-    ])
-    .run([
-      '$anchorScroll',
-      configAnchorScrollYOffset,
+      fmArticle, 
     ]);
-  
-  function configUiViewScrollProvider($uiViewScrollProvider) {
-    $uiViewScrollProvider.useAnchorScroll();
-  }
-  
-  function configAnchorScrollYOffset($anchorScroll) {
-    $anchorScroll.yOffset = 100;
-  }
-  
+  //   .config([
+  //     '$uiViewScrollProvider',
+  //     configUiViewScrollProvider,
+  //   ])
+  //   .run([
+  //     '$anchorScroll',
+  //     configAnchorScrollYOffset,
+  //   ]);
+  // 
+  // function configUiViewScrollProvider($uiViewScrollProvider) {
+  //   $uiViewScrollProvider.useAnchorScroll();
+  // }
+  // 
+  // function configAnchorScrollYOffset($anchorScroll) {
+  //   $anchorScroll.yOffset = 100;
+  // }
+  // 
   function fmArticle($log, $compile, $anchorScroll) {
     return {
       template, 

@@ -16,6 +16,8 @@ const baseUrl = `${__API_URL__}/articles`;
       // Will hold the html string of the current article
       articleTableOfContents: null, 
       
+      
+      
       /**      
        * getAllArticles - Retrieves all articles from the database 
        *        
