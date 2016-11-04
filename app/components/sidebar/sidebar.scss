@@ -2,22 +2,114 @@
 
 .fm-Sidebar {
   padding: $smallGutter;
+  font-size: .75rem;
 }
 
 .fm-Sidebar-title {
-  display:     inline-block;
   margin-bottom: 1em;
+  font-size:     1.5em;
+  margin-top:    0;
+  // display:       inline-block;
+  // border-bottom: 1px black solid;
   // margin-left: $medGutter;
 }
 
 .fm-Sidebar-list {
   list-style-type: none;
   padding:         0;
+  margin-bottom:   0;
+  
+  &.fm-Sidebar-toc {
+    // .fm-Sidebar-articleTitle {
+    //   &::before {
+    //     @include fa-icon;
+    //     content: $fa-var-caret-right;
+    //     margin-right: $lgGutter;  
+    //   }
+    // }
+    
+    // list-style:   circle;
+    // padding-left: $medGutter;
+  }
   // padding:         $smallGutter $smallGutter $smallGutter $medGutter;
 }
 
-.fm-Sidebar-linkWrapper {
+.fm-Sidebar-sectionWrapper {
+  margin-bottom: $medGutter;
+  display:       flex;
+  align-items:   center;
   
+  
+  .fm-Sidebar-caretWrapper {
+    // width:        5%;
+    width:        10px;
+    height:       100%;
+    display:      inline-block;
+    position:     relative;
+    margin-right: $medGutter;
+    
+    
+    &:before {
+      content:        '';
+      display:        block;
+      padding-bottom: 100%;
+      margin:         0;
+      display:        flex;
+      align-items:    center;
+    }
+    
+    
+    .fm-Sidebar-caret {
+      position:    absolute; 
+      top:         0;
+      left:        0;
+      width:       100%;
+      height:      100%;
+      display:     flex;
+      align-items: center;
+      padding:     $smallGutter;
+      content:     "a";
+      // content:     $fa-var-caret-right;
+    }
+  }
+  
+  .fm-Sidebar-link {
+    margin: 0;
+    width:   95%; 
+    
+    .fm-Sidebar-sectionTitleWrapper {
+      height:  100%;
+      width:   100%;
+      display: inline-block;
+      
+      .fm-Sidebar-sectionTitle {
+        margin: 0;
+      }
+    }
+  }
+  
+  
+}
+
+
+.fm-Sidebar-linkWrapper {
+  // width: 80%;
+  
+  
+  // &::before {
+  //   width: 5%;
+  //   @include fa-icon;
+  //   content: $fa-var-caret-right;
+  //   // margin-right: $lgGutter;  
+  // }
+  
+  
+  &:last-of-type {
+    
+    h6 {
+      margin-bottom: 0;
+    }
+  }
   
   &.is-active {
     color: $lightGreyPositive;
@@ -31,9 +123,11 @@
 
 .fm-Sidebar-articleDate {
   display: inline-block;
+  font-size: 1em;
 }
 
 .fm-Sidebar-articleTitle {
-  display:    inline-block;
+  // display:    inline-block;
   margin-top: 0;
+  font-size:  1em;
 }

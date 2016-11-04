@@ -49,15 +49,6 @@
           ], 
         },        
       });
-      
-      // .state('blog.sidebar', {
-      //   views: {
-      //     sidebar: {
-      //       template: '<h1>HELLO</h1>',
-      //       // template: require('./blog-sidebar-view.html'),
-      //     },
-      //   },
-      // });
   } 
    
 })();

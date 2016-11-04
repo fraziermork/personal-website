@@ -36,7 +36,7 @@ module.exports  = {
                 articleInfo.content = compileMd.render(articleInfo.content, {
                   tocCallback(tocMarkdown, tocArray, tocHtml) {                 
                     articleInfo.tableOfContents = tocArray;
-                    debug(articleInfo);
+                    // debug(articleInfo);
                     resolve(articleInfo);
                   },
                 });

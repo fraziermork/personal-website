@@ -175,7 +175,7 @@ But wait--how does myCar know about turnOn? It isn't a property on myCar anymore
 
 This gets at a broader question: how does myCar find properites on it's prototype, or even know what it's prototype is? 
 
-# Prototypical Inheritance 
+### Prototypical Inheritance 
 
 When we try to access a property like turnOn that doesn't exist on myCar, Javascript will ['look up the Inheritance chain'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) at Car.prototype and see if it can find that property there. If it can't, it will keep looking up the chain to Object.prototype. Javascript will only return undefined for a property after searching the object, the object's prototype, the prototype's prototype, etc. and never found anything. 
 
