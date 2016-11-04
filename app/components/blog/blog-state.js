@@ -15,9 +15,6 @@
         controllerAs: 'blogCtrl', 
         url:          '/blog', 
         abstract:     true,
-        data: {
-          title: 'blog',
-        }, 
         resolve: { 
           articleList: ['$log', 'articleManager', 
             function(    $log,   articleManager) {
@@ -31,12 +28,18 @@
         url:          '', 
         controller:   'BlogListController', 
         controllerAs: 'blogListCtrl',
+        data: {
+          title: 'blog',
+        }, 
       })
       .state('blog.article', {
         template:     require('./blog-article-view.html'), 
         url:          '/article/:articleUrl', 
         controller:   'BlogArticleController', 
         controllerAs: 'blogArtCtrl', 
+        data: {
+          title: 'blog', 
+        },
         resolve: {
           article: ['$log', '$stateParams', 'articleManager', 
             function($log,   $stateParams,   articleManager) {
@@ -44,9 +47,7 @@
               return articleManager.getArticleByUrl($stateParams.articleUrl);
             }
           ], 
-        },
-        
-        
+        },        
       });
       
       // .state('blog.sidebar', {

@@ -1,25 +1,56 @@
-<nav class="fm-Sidebar well hidden-xs hidden-sm">
-  <h4 class="fm-Sidebar-title">Articles:</h4>
-  <ul class="fm-Sidebar-list"
-      data-ng-class="{ 
-        'hidden-xs': sideCtrl.hidden, 
-        'hidden-sm': sideCtrl.hidden 
-      }"
-  >
-    <li class="fm-Sidebar-linkWrapper row"
-        data-ng-repeat="article in articles"
-        ui-sref-active="is-active"
-    >
-      <a class="fm-Sidebar-link"
-         ui-sref="blog.article({ articleUrl: article.url })"   
+<nav class="fm-Sidebar">
+  <section class="well">
+    <h4 class="fm-Sidebar-title">Table of Contents</h4>
+    <ul class="fm-Sidebar-list">
+      <li class="fm-Sidebar-linkWrapper"
+          data-ng-repeat="section in sideCtrl.article.tableOfContents"
       >
-        <div class="col-xs-4">
-          <span class="fm-Sidebar-articleDate">{{ article.publication_date | date:'MM/dd/yy' }}</span>
-        </div>
-        <div class="col-xs-8">
-          <h6 class="fm-Sidebar-articleTitle" data-ng-bind="article.title"></h6>
-        </div>
-      </a>
-    </li>
-  </ul>
+        <a class="fm-Sidebar-link"
+           ng-href="# + section.anchor"
+           data-ng-click="sideCtrl.handleClickOnTableOfContentsLink($event, section.anchor)"   
+        >
+          <h6 class="fm-Sidebar-articleTitle" data-ng-bind="section.content"></h6>
+        </a>
+      </li>
+    </ul>
+    
+  </section>
+  
+  <section class="well">
+    <h4 class="fm-Sidebar-title">Articles:</h4>
+    <ul class="fm-Sidebar-list"
+        data-ng-class="{ 
+          'hidden-xs': sideCtrl.hidden, 
+          'hidden-sm': sideCtrl.hidden 
+        }"
+    >
+      <li class="fm-Sidebar-linkWrapper row"
+          data-ng-repeat="article in sideCtrl.articles"
+          ui-sref-active="is-active"
+      >
+        <a class="fm-Sidebar-link"
+           ui-sref="blog.article({ articleUrl: article.url })"   
+        >
+          <div class="col-xs-4">
+            <span class="fm-Sidebar-articleDate">{{ article.publication_date | date:'MM/dd/yy' }}</span>
+          </div>
+          <div class="col-xs-8">
+            <h6 class="fm-Sidebar-articleTitle" data-ng-bind="article.title"></h6>
+          </div>
+        </a>
+        
+        <!-- <ul class="fm-TableOfContents">
+          <li class="fm-TableOfContents-wrapper"
+              data-ng-repeat="sectionTitle in article.tableOfContents"
+          >
+            <a href="#" 
+               data-ng-bind="sectionTitle.content"
+               data-ng-click="sideCtrl.handleClickOnTableOfContentsLink($event, sectionTitle.anchor)"
+            ></a>
+          </li>
+        </ul> -->
+        
+      </li>
+    </ul>
+  </section>
 </nav>

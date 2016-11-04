@@ -28,12 +28,20 @@ module.exports  = {
             fs.readFileAsync(path.join(pathToRead, directoryName, 'content.md'), 'utf8'),
             (info, content) => {              
               let articleInfo = JSON.parse(info);
-              articleInfo.content = compileMd.render(content);
-              debug('articleInfo: \n', articleInfo.title);
-              
+              articleInfo.content = content;
               return articleInfo;
-            }
-          );
+            })
+            .then((articleInfo) => {
+              return new Promise((resolve, reject) => {
+                articleInfo.content = compileMd.render(articleInfo.content, {
+                  tocCallback(tocMarkdown, tocArray, tocHtml) {                 
+                    articleInfo.tableOfContents = tocArray;
+                    debug(articleInfo);
+                    resolve(articleInfo);
+                  },
+                });
+              });
+            });
         }));
       });
   }, 

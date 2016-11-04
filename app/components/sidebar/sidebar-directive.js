@@ -5,17 +5,36 @@
   .directive('fmSidebar', [
     '$log',
     fmSidebar,
+  ])
+  .config([
+    '$uiViewScrollProvider',
+    configUiViewScrollProvider,
+  ])
+  .run([
+    '$anchorScroll',
+    configAnchorScrollYOffset,
   ]);
+  
+  function configUiViewScrollProvider($uiViewScrollProvider) {
+    $uiViewScrollProvider.useAnchorScroll();
+  }
+  
+  function configAnchorScrollYOffset($anchorScroll) {
+    $anchorScroll.yOffset = 100;
+  }
   
   function fmSidebar($log) {
     return {
       template, 
-      restrict: 'E',
+      restrict:         'E',
+      bindToController: true, 
+      controller:       'SidebarController', 
+      controllerAs:     'sideCtrl', 
+      
       scope: {
         articles: '=',
+        article:  '=',
       }, 
-      controller:   'SidebarController', 
-      controllerAs: 'sideCtrl', 
       // link(scope, elem, attrs, ctrl) {
       //   
       //   

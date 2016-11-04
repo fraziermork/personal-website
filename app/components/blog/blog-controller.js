@@ -12,6 +12,7 @@
     ])
     .controller('BlogArticleController', [
       '$log',
+      '$state',
       'article', 
       BlogArticleController,
     ]);
@@ -19,8 +20,6 @@
   function BlogController($log, articleList) {
     const vm       = this;
     vm.articleList = articleList;
-    
-    
   }
     
   function BlogListController($log, articleList) {
@@ -29,9 +28,11 @@
   
   }
   
-  function BlogArticleController($log, article) {
+  function BlogArticleController($log, $state, article) {
     const vm   = this;
     vm.article = article;
+    $log.warn('BlogArticleController', article);
+    $state.current.data.title = article.title;
     
   }
   

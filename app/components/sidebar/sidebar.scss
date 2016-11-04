@@ -6,12 +6,14 @@
 
 .fm-Sidebar-title {
   display:     inline-block;
-  margin-left: $medGutter;
+  margin-bottom: 1em;
+  // margin-left: $medGutter;
 }
 
 .fm-Sidebar-list {
   list-style-type: none;
-  padding:         $smallGutter $smallGutter $smallGutter $medGutter;
+  padding:         0;
+  // padding:         $smallGutter $smallGutter $smallGutter $medGutter;
 }
 
 .fm-Sidebar-linkWrapper {
