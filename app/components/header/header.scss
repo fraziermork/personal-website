@@ -104,12 +104,9 @@
   
   // Desktop 
   @media (min-width: $screen-md-min) {
-    position:       fixed;
-    top:            0;
-    left:           0;
-    right:          0;
+    
     box-sizing:     border-box;
-    transition:     all .25s ease-out;
+    transition:     all 1s ease-out;
 
     .fm-Header-wrapper {
       height: $headerLgHeight;
@@ -117,10 +114,16 @@
 
     // Class only relevant above breakpoint
     &.is-small {
+      position:   fixed;
+      top:        0;
+      left:       0;
+      right:      0;
       box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
       
       .fm-Header-wrapper {
-        height: $headerSmHeight;
+        // TODO: look into how to do a smooth shrinking header 
+        height:     $headerSmHeight;
+        transition: all .25s ease-out;
       }
     }
     

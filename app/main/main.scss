@@ -13,15 +13,6 @@
   fill:   transparent;
 }
 
-
-.fm-Main {
-  margin-top: 0;
-  
-  @media (min-width: $screen-md-min) {
-    margin-top: $headerLgHeight;
-  }
-}
-
 html, body {
   @include fm-text();
   font-size: 14px;

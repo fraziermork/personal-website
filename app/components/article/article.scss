@@ -25,12 +25,12 @@
   }
   
   p {
-    // text-indent: 1em;
     margin-bottom: 1em;
     line-height:   1.5;
   }
   
-  h3:first-of-type {
-    margin-top: 0;
+  pre {
+    margin: $lgGutter 0 $lgGutter $lgGutter;
+    font-size: 1em;
   }
 }
