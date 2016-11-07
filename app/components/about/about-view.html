@@ -4,7 +4,7 @@
   <div class="row">
     
     <!-- ABOUT -->
-    <article class="fm-About-article col-xs-12 col-sm-6">
+    <section class="fm-About-section fm-About-article col-xs-12 col-sm-6">
       <div class="row ">
         <div class="col-xs-12">
           <h3 class="fm-About-header">about me</h3>
@@ -13,11 +13,11 @@
           </p>
         </div>
       </div>
-    </article>
+    </section>
     
     
     <!-- PORTRAIT -->
-    <div class="fm-About-portrait col-xs-12 col-sm-6">
+    <section class="fm-About-section fm-About-portrait col-xs-12 col-sm-6">
       <div class="fm-About-portraitRow row">
         <div class="fm-About-portraitImgWrapper col-xs-10 col-xs-offset-1">
           <img class="fm-About-portraitImg img-responsive center-block" 
@@ -26,11 +26,11 @@
           />
         </div>
       </div>
-    </div>
+    </section>
     
     
     <!-- SKILLS -->
-    <div class="col-xs-12 col-sm-6">
+    <section class="fm-About-section col-xs-12 col-sm-6">
       <h3 class="fm-About-header">Skills</h3>
       <ul class="fm-About-skillList">
         <li class="fm-About-skillWrapper"
@@ -54,16 +54,12 @@
           </div>
         </li>  
       </ul>
-      <!-- <div class="row">
-        <a ng-href="{{ abtCtrl.resume }}">RESUME</a>
-        
-      </div> -->
-    </div>
+    </section>
     
     
     
     <!-- CONTACT -->
-    <div class="col-xs-12 col-sm-6">
+    <section class="fm-About-section col-xs-12 col-sm-6">
       <form class="fm-About-contact" 
             action="javascript:void(0);" 
             name="contactForm"
@@ -78,7 +74,7 @@
           <div class="form-group col-xs-12">
             <label for="fm-About-emailInput"
                    class="fm-About-label"
-            >email</label>
+            >Email address:</label>
             <input class="fm-About-contactInput form-control"
                    id="fm-About-emailInput"
                    type="email" 
@@ -94,7 +90,7 @@
           <div class="form-group col-xs-12">
             <label for="fm-About-subjectInput"
                    class="fm-About-label"
-            >subject</label>
+            >Subject:</label>
             <input class="fm-About-contactInput form-control"
                    id="fm-About-subjectInput"
                    type="text" 
@@ -111,7 +107,7 @@
           <div class="form-group col-xs-12">
             <label for="fm-About-subjectInput"
                    class="fm-About-label"
-            >message</label>
+            >Message:</label>
             <textarea class="fm-About-contactInput form-control"
                       name="body"
                       data-ng-model="abtCtrl.emailData.text"
@@ -152,7 +148,7 @@
           </ul>
         </nav>
       </div>
-    </div>
+    </section>
     
     
     

@@ -1,14 +1,18 @@
 @import '../../style/fm-variables';
 
+.fm-About-section {
+  margin-bottom: $lgGutter;
+}
+
 .fm-About-header {
-  font-family:    'Raleway', sans-serif;
-  font-weight:    400;
-  text-transform: uppercase;
-  font-stretch:   ultra-expanded;
+  @include header-text();
+  @include underlined();
+  font-weight: 400;
+  margin-top:  0;
 }
 // ABOUT ME
 .fm-About-blurb {
-  @include fm-text();
+  // @include fm-text();
 }
 
 
@@ -19,7 +23,7 @@
 
 // SKILLS
 .fm-About-skillList {
-  @include fm-text();
+  // @include fm-text();
   list-style-type: none;
   padding:         0;
   width:           100%;
@@ -27,15 +31,15 @@
 .fm-About-skillWrapper {
   display:    inline-block;
   min-height: 50px;
-  // margin:      $medGutter;
   padding:    $medGutter;
   width:      50%;
+  // margin:      $medGutter;
 }
 .fm-About-skillRow {
-  // outline:       1px black solid;
   margin-bottom: $medGutter;
   display:       flex;
   align-items:   center;
+  // outline:       1px black solid;
   
 }
 
@@ -103,6 +107,15 @@
   text-decoration: none;
   color: inherit;
 }
+.fm-About-label {
+  @include section-heading-text();
+  font-weight: normal;
+}
+
 .fm-About-icon {
   
+}
+
+.fm-About-contactSubmit {
+  @include header-text();
 }

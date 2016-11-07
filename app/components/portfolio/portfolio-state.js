@@ -16,7 +16,7 @@
       controllerAs: 'portCtrl', 
       url:          '/portfolio',
       data: {
-        title: 'portfolio'
+        title: 'Portfolio'
       }, 
       
     });

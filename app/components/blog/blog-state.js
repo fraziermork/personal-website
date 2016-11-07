@@ -29,7 +29,7 @@
         controller:   'BlogListController', 
         controllerAs: 'blogListCtrl',
         data: {
-          title: 'blog',
+          title: 'Blog',
         }, 
       })
       .state('blog.article', {
@@ -38,7 +38,7 @@
         controller:   'BlogArticleController', 
         controllerAs: 'blogArtCtrl', 
         data: {
-          title: 'blog', 
+          title: 'Blog', 
         },
         resolve: {
           article: ['$log', '$stateParams', 'articleManager', 

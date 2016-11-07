@@ -21,12 +21,16 @@ $lightGreyPositive: #888;
 
 $thinLine: 1px $lightGreyNegative solid; 
 
+@mixin hoverUnderline() {
+  &:hover {
+    border-bottom: 1px opacify($lightGreyNegative, .5) solid;
+  }
+}
+
 @mixin underlined($isLink:false) {
   border-bottom: $thinLine;
   @if $isLink {
-    &:hover {
-      border-bottom: 1px opacify($lightGreyNegative, .5) solid;
-    }
+    @include hoverUnderline();
   }
 }
 

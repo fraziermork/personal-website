@@ -8,12 +8,9 @@
 .fm-Sidebar-title {
   @include header-text();
   @include underlined();
-  // @include fm-heading();
   margin-bottom: 1em;
   font-size:     1.5em;
   margin-top:    0;
-  
-  // font-family:   'Raleway', sans-serif;
 }
 
 .fm-Sidebar-list {
