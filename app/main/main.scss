@@ -14,10 +14,11 @@
 }
 
 html, body {
-  @include fm-text();
+  // @include fm-text();
+  @include body-text();
   font-size: 14px;
   
   @media (min-width: $screen-md-min) {
-      font-size: 14px;
+      font-size: 16px;
   }
 }

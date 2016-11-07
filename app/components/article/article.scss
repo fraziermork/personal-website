@@ -20,8 +20,12 @@
   }
   
   h3, h4, h5, h6 {
-    @include fm-heading();
-    font-size: 1.5em;
+    // @include fm-heading();
+    @include section-heading-text();
+    @include underlined();
+    font-size:     1.5em;
+    border-bottom: $thinLine;
+    margin-top:    $lgGutter;
   }
   
   p {

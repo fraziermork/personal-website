@@ -1,13 +1,10 @@
 @import '../../style/fm-variables';
 
 .fm-Header {
-  @include fm-heading();
   position:         relative;
   background-color: white;
   z-index:          1;
   font-size:        1.5rem;
-  text-transform:   uppercase;
-  font-stretch:     ultra-expanded;
   padding:          $smallGutter;
   
   // background: linear-gradient(180deg, white, white 90%, rgba(265, 265, 265, 0));
@@ -24,6 +21,7 @@
     position:    absolute;
   }
   .fm-Header-title {
+    @include header-text();
     display:     inline-block;
     margin:      0 0 0 #{$logoWidth + $lgGutter};
     font-weight: 200;
@@ -40,6 +38,8 @@
   }
   
   .fm-Nav {
+    @include header-text();
+    
     position:  fixed;
     bottom:    0;
     right:     0;
@@ -66,8 +66,9 @@
     }
     
     .fm-Nav-link {
+      text-decoration: none;
       color:           inherit;
-      
+      @include underlined(true);
     }
   }
   

@@ -19,13 +19,41 @@ $logoWidth:      35px;
 
 $lightGreyPositive: #888;
 
+$thinLine: 1px $lightGreyNegative solid; 
+
+@mixin underlined($isLink:false) {
+  border-bottom: $thinLine;
+  @if $isLink {
+    &:hover {
+      border-bottom: 1px opacify($lightGreyNegative, .5) solid;
+    }
+  }
+}
+
+@mixin section-title-text() {
+  font-family: 'Lora', serif;
+}
+
+@mixin body-text() {
+  font-family: 'Lora', serif;
+}
+
+@mixin header-text() {
+  font-family:    'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+@mixin section-heading-text() {
+  font-family: 'Oswald', sans-serif;  
+}
 
 @mixin fm-heading() {
-  font-family:      'Raleway', sans-serif;
-  // text-transform:   uppercase;
+  // font-family:      'Raleway', sans-serif;
   font-stretch:     ultra-expanded;
+  // text-transform:   uppercase;
 }
 
 @mixin fm-text() {
-  font-family: 'Lato', sans-serif;
+  // font-family: 'Lato', sans-serif;
 }
