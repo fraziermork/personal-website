@@ -13,18 +13,12 @@
   fill:   transparent;
 }
 
-
-.fm-Main {
-  margin-top: 0;
+html, body {
+  // @include fm-text();
+  @include body-text();
+  font-size: 14px;
   
   @media (min-width: $screen-md-min) {
-    margin-top: $headerLgHeight;
+      font-size: 16px;
   }
-}
-
-body, html {
-  font-size: 14px;
-}
-body {
-  
 }

@@ -4,13 +4,15 @@
              data-ng-repeat="project in portCtrl.projects"
     >
       <div class="row">
-        <div class="fm-Portfolio-titleWrapper col-xs-12">
-          <h3 class="fm-Portfolio-title"
-              data-ng-bind="project.title"
-          ></h3>
-          <h6 class="fm-Portfolio-subtitle"
-              data-ng-bind="project.subtitle"
-          ></h6>
+        <div class="fm-Portfolio-titleBoxWrapper col-xs-12">
+          <div class="fm-Portfolio-titleBox">
+            <h3 class="fm-Portfolio-title"
+                data-ng-bind="project.title"
+            ></h3>
+            <h6 class="fm-Portfolio-subtitle"
+                data-ng-bind="project.subtitle"
+            ></h6>
+          </div>
         </div>
       </div>
       

@@ -13,13 +13,28 @@
 } 
 
 .fm-Article-body {
+  font-size: 1rem;
+  
+  & *:first-child {
+    margin-top: 0;
+  }
+  
+  h3, h4, h5, h6 {
+    // @include fm-heading();
+    @include section-heading-text();
+    @include underlined();
+    font-size:     1.5em;
+    border-bottom: $thinLine;
+    margin-top:    $lgGutter;
+  }
+  
   p {
-    // text-indent: 1em;
     margin-bottom: 1em;
     line-height:   1.5;
   }
   
-  h3:first-of-type {
-    margin-top: 0;
+  pre {
+    margin: $lgGutter 0 $lgGutter $lgGutter;
+    font-size: 1em;
   }
 }

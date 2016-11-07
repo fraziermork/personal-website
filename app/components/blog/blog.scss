@@ -1,13 +1,21 @@
 @import '../../style/fm-variables';
 
 
+.fm-Article-publicationDate {
+  // @include section-heading-text();
+}
+
+.fm-Article-previewTitle {
+  @include section-heading-text();
+}
 
 .fm-Article-list {
-  padding:         0;
+  // padding:         0;
   list-style-type: none;
 }
 
 .fm-Article-previewLink {
+  @include hoverUnderline();
   text-decoration: none;
   color:           inherit;
 }

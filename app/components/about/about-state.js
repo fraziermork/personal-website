@@ -16,7 +16,7 @@
       controllerAs: 'abtCtrl', 
       url:          '/about',
       data: {
-        title: 'about'
+        title: 'About Frazier'
       }, 
     });
   }

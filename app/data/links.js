@@ -1,14 +1,6 @@
 module.exports = [
   {
     classesToApply: [
-      
-    ], 
-    labelText: 'resume',
-    content:   'resume', 
-    url:       require('!!file?name=[name].[ext]!../assets/frazier-mork-cv.pdf'),
-  },
-  {
-    classesToApply: [
       'fa-linkedin-square'
     ], 
     labelText: 'linkedin',
@@ -22,5 +14,13 @@ module.exports = [
     labelText: 'github',
     content:   null,
     url:       'https://github.com/fraziermork',
+  },
+  {
+    classesToApply: [
+      
+    ], 
+    labelText: 'resume',
+    content:   'Resume', 
+    url:       require('!!file?name=[name].[ext]!../assets/frazier-mork-cv.pdf'),
   },
 ];

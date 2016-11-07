@@ -1,7 +1,7 @@
 @import '../../style/fm-variables';
 
 .fm-Portfolio {
-  font-family: 'Lato', sans-serif;
+  
 }
 
 .fm-Portfolio-project {
@@ -9,24 +9,30 @@
 }
 
 .fm-Portfolio-titleWrapper {
+  
+}
+.fm-Portfolio-titleBox {
+  @include underlined();
   display:       flex;
   align-items:   center;
-  margin-bottom: 10px;
+  margin-bottom: $medGutter;
 }
+
+
 .fm-Portfolio-title {
-  font-family:    'Raleway', sans-serif;
+  @include header-text();
   font-weight:    400;
-  text-transform: uppercase;
-  font-stretch:   ultra-expanded;
   margin:         0;
   @media (min-width: $screen-md-min) {
-    display:        inline-block; 
+    display: inline-block; 
   }
 }
 
 .fm-Portfolio-subtitle {
-  display: inline-block;
-  margin-left: 20px;
+  display:       inline-block;
+  margin-left:   $medGutter;
+  margin-top:    0;
+  margin-bottom: 0;
 }
 
 .fm-Portfolio-bodyWrapper { 

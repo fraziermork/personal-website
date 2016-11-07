@@ -12,7 +12,6 @@ const md = new MarkdownIt({
   linkify:    true, 
   typography: true,
   
-  
   /**  
    * highlight - Responsible for syntax highlighting of code found in source markdown files.    
    *    
@@ -22,18 +21,17 @@ const md = new MarkdownIt({
    */   
   highlight(str, lang) {
     debug('inside md highlight');
-    debug('str: ', str);
-    debug('str.length: ', str.length);
     if (!str.length) return '';
-    return `<code data-code="${str}">${prism.highlight(str, prism.languages[lang])}</code>`;
+    let highlightedStr = prism.highlight(str, prism.languages[lang]);
+    return `<code data-code="${str}">${highlightedStr}</code>`;
   }, 
 });
 
 md.use(mdContainer, 'codeblock', {
   render(tokens, idx, _options, env, self) {
     debug('inside mdContainer render');
-    debug(tokens[idx]);
-    debug(tokens[idx + 1].content);
+    // debug(tokens[idx]);
+    // debug(tokens[idx + 1].content);
     
     // add a class to the opening tag
     if (tokens[idx].nesting === 1) {
@@ -49,7 +47,7 @@ md.use(mdContainer, 'codeblock', {
       // Hide the code block that would exist inside of it. This removes the content to prevent duplication, but directive will have to delete the pre tags that markdown-it will insert anyway
       tokens[idx + 1].hidden = true;
       tokens[idx + 1].content = '';
-      debug(tokens[idx + 1]);
+      // debug(tokens[idx + 1]);
     }
 
     return self.renderToken(tokens, idx, _options, env, self);
