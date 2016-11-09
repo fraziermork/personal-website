@@ -1,7 +1,7 @@
 'use strict';
 
 // environment variables 
-if (process.env.NODE_ENV === 'production' && (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN)) {
+if (process.env.NODE_ENV === 'production' && !process.env.MAILGUN_API_KEY && !process.env.MAILGUN_DOMAIN) {
   throw new Error('Mailgun configuration required');
 }
 

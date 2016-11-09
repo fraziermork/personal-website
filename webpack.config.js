@@ -50,6 +50,7 @@ module.exports = {
     ], 
     bundle: [
       'bootstrap-loader/extractStyles',
+      'bootstrap-loader',
       PATHS.entry,
     ]
   }, 
@@ -85,7 +86,6 @@ module.exports = {
         loader: ExtractPlugin.extract('style', 'css!postcss!resolve-url!sass?sourceMap', { allChunks: true }),
       },
       { 
-        // version no. regex unneeded
         test:    /\.(png|jpe?g|ttf|eot|svg|woff(2)?)(\?v=\d+\.\d+\.\d+)?$/, 
         loaders: [
           'url?limit=10000', 
