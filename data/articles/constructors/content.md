@@ -3,7 +3,7 @@ Constructor functions are the Javascript way to to build objects with a certain 
 
 If you told me to write a function to act as a factory for car objects and I didn't know anything about constructor functions, I might write something like this: 
 
-::: codeblock
+::: tonicCodeBlock
 ```javascript 
 // Faux constructor function 
 function transformObjectIntoACar(objectToTransform, brand, color) {
@@ -31,7 +31,7 @@ Except, this code isn't really that great. The purpose of the code isn't clear u
 
 Constructor functions will solve these problems. Check this out: 
 
-::: codeblock
+::: tonicCodeBlock
 ```javascript 
 // Car constructor object 
 function Car(brand, color) {
@@ -75,7 +75,7 @@ Our cars are static right now--they don't do anything. I can make them more exci
 
 Here is a slightly more interesting car: 
 
-::: codeblock
+::: tonicCodeBlock
 ```javascript
 // Car constructor object 
 function Car(brand, color) {
@@ -104,7 +104,7 @@ IT'S ALIVE!!! I've attached a method that can change properties on the object! S
 
 What if there's more than one car? In keeping with the tradition of owning nondescript cars, lets make a silver Toyota too: 
 
-::: codeblock
+::: tonicCodeBlock
 ```javascript
 // Car constructor object 
 function Car(brand, color) {
@@ -140,7 +140,7 @@ Not sharing properties between cars makes sense for properties like 'on', becaus
 ### Prototypes in Javascript 
 Every constructor function has a [prototype](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes) object, which acts as a cache of properties that are shared between all objects instantiated with that constructor. So, if I attach something to the Car prototype, all of my cars will have access to it. What's more, there will only be one version of it in memory, the version on the prototype, so nothing is duplicated that doesn't need to be. 
 
-::: codeblock
+::: tonicCodeBlock
 ```javascript 
 // Car constructor function 
 function Car(brand, color) {
@@ -185,7 +185,7 @@ One thing worth noting is that attaching a property to an instance may 'shadow' 
 
 Prepare yourself, because now we're going to start to get into the weird stuff. Try to guess what the console logs at the bottoms will show before running the code: 
 
-::: codeblock
+::: tonicCodeBlock
 ```javascript 
 // Car constructor function 
 function Car(brand, color) {
@@ -243,7 +243,7 @@ That's cool and all, but sometimes it's nice to able to describe things as inher
 
 That can be done, but it's more complicated: 
 
-::: codeblock
+::: tonicCodeBlock
 ```javascript 
 // Define Vehicle constructor and add turnOn method to its prototype
 function Vehicle(brand) {

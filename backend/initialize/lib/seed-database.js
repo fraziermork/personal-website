@@ -14,6 +14,8 @@ module.exports = {
     return articleReader.readEachArticle(inputPathToArticlesDirectory)
       .then((articles) => {
         return Promise.all(articles.map((articleInfo) => {
+          debug('articleInfo: ', articleInfo);
+          
           // Attach the title as the url property so that t can be formatted by the setter on the model 
           articleInfo.url = articleInfo.title;
           return Article.create(articleInfo); 

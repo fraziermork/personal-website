@@ -10,7 +10,7 @@
     "start:dev": "webpack-dev-server --inline --hot",
     "start:db": "mongod -dbpath=./data/db --smallfiles",
     "start:backend": "DEBUG=fm* nodemon backend/backend-dev-server.js",
-    "init-db": "node ./backend/initialize/initialize.js"
+    "init-db": "DEBUG=fm* node ./backend/initialize/initialize.js"
   },
   "engines": {
     "node": "6.1.0"

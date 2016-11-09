@@ -13,7 +13,7 @@ module.exports  = {
     debug(`readEachArticle in ${pathToRead}`, process.cwd());
     return fs.readdirAsync(pathToRead)
       .then((articleDirectories) => {
-        
+        debug('articleDirectories: ', articleDirectories);
         // Prevent any weird files like .DS_Store from causing errors
         articleDirectories = articleDirectories.filter((directoryName) => {
           return fs.statSync(path.join(pathToRead, directoryName)).isDirectory();
@@ -32,14 +32,20 @@ module.exports  = {
               return articleInfo;
             })
             .then((articleInfo) => {
+              // debug('articleInfo: ', articleInfo);
               return new Promise((resolve, reject) => {
-                articleInfo.content = compileMd.render(articleInfo.content, {
-                  tocCallback(tocMarkdown, tocArray, tocHtml) {                 
-                    articleInfo.tableOfContents = tocArray;
-                    // debug(articleInfo);
-                    resolve(articleInfo);
-                  },
-                });
+                try {
+                  articleInfo.content = compileMd.render(articleInfo.content, {
+                    tocCallback(tocMarkdown, tocArray, tocHtml) {                 
+                      articleInfo.tableOfContents = tocArray;
+                      debug('articleInfo: ', articleInfo);
+                      return resolve(articleInfo);
+                    },
+                  });  
+                } catch (err) {
+                  debug(err);
+                  return reject(err);
+                }
               });
             });
         }));

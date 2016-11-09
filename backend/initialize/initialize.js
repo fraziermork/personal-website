@@ -16,7 +16,7 @@ mongooseManager.startConnectionToDatabase()
    debug('seeding database');
    return seedDatabase.seedDatabaseWithArticles(`${__dirname}/../../data/articles`);
  })
- .then(() => {
+ .then((articles) => {
    debug('database seeded');
    mongooseManager.closeConnectionToDatabase();
  })
