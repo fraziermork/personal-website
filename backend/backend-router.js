@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // npm modules
 const debug           = require('debug')('fm:backendRouter');

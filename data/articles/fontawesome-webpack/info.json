@@ -1,6 +1,6 @@
 {
-  "title":            "How to Load Fontawesome from Sass Using Webpack", 
-  "subtitle":         "Configuring webpack", 
-  "publication_date": "2016-09-05", 
+  "title":            "Loading Font Awesome from Sass With Webpack", 
+  "subtitle":         "Configuration for Webpack 1 and 2", 
+  "publication_date": "2016-11-09", 
   "tags":             []
 }
