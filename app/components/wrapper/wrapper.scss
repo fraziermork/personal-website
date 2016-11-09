@@ -2,7 +2,10 @@
 
 .fm-Wrapper {
   // background-color: black;
-  font-size: 1rem;
+  font-size:  1rem;
+  @media (min-width: $screen-md-min) {
+    margin-top: $headerLgHeight;
+  }  
 }
 
 .fm-Wrapper-title {

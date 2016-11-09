@@ -5,24 +5,24 @@
   .directive('fmSidebar', [
     '$log',
     fmSidebar,
-  ])
-  .config([
-    '$uiViewScrollProvider',
-    configUiViewScrollProvider,
-  ])
-  .run([
-    '$anchorScroll',
-    configAnchorScrollYOffset,
   ]);
-  
-  function configUiViewScrollProvider($uiViewScrollProvider) {
-    $uiViewScrollProvider.useAnchorScroll();
-  }
-  
-  function configAnchorScrollYOffset($anchorScroll) {
-    $anchorScroll.yOffset = 100;
-  }
-  
+  // .config([
+  //   '$uiViewScrollProvider',
+  //   configUiViewScrollProvider,
+  // ])
+  // .run([
+  //   '$anchorScroll',
+  //   configAnchorScrollYOffset,
+  // ]);
+  // 
+  // function configUiViewScrollProvider($uiViewScrollProvider) {
+  //   $uiViewScrollProvider.useAnchorScroll();
+  // }
+  // 
+  // function configAnchorScrollYOffset($anchorScroll) {
+  //   $anchorScroll.yOffset = 100;
+  // }
+  // 
   function fmSidebar($log) {
     return {
       template, 
