@@ -12,13 +12,14 @@
     'fm.code-block', 
   ])
   .config([
+    '$locationProvider',
     '$stateProvider', 
     '$urlRouterProvider',
-    '$uiViewScrollProvider',
     fmAppConfig,
   ]);
   
-  function fmAppConfig($stateProvider, $urlRouterProvider) {
+  function fmAppConfig($locationProvider, $stateProvider, $urlRouterProvider) {
+    $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/portfolio');
   }
   
