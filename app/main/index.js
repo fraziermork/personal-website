@@ -1,3 +1,5 @@
+/* global __DEVONLY__ */
+
 (function() {
   angular.module('fm.app', [
     'ui.router',
@@ -15,12 +17,14 @@
     '$stateProvider', 
     '$urlRouterProvider',
     '$anchorScrollProvider',
+    '$logProvider',
     fmAppConfig,
   ]);
   
-  function fmAppConfig($stateProvider, $urlRouterProvider, $anchorScrollProvider) {
+  function fmAppConfig($stateProvider, $urlRouterProvider, $anchorScrollProvider, $logProvider) {
     $urlRouterProvider.otherwise('/portfolio');
     $anchorScrollProvider.disableAutoScrolling();
+    $logProvider.debugEnabled(__DEVONLY__);
   }
   
 })();
