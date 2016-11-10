@@ -8,8 +8,13 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
+        
+        <div class="fm-Nav-screen"
+             data-ng-click="headCtrl.toggleNavVisibility()"
+        ></div>
+        
         <!-- LOGO -->
-        <div class="fm-Header-wrapper clearfix">
+        <section class="fm-Header-wrapper clearfix">
           <svg version="1.1"
                baseProfile="full"
                width="34"
@@ -56,7 +61,44 @@
             />
           </svg>
           <h1 class="fm-Header-title">frazier mork</h1>
-        </div>
+        </section>
+        <nav class="fm-Nav"
+             id="fm-Nav"
+             data-ng-class="{ 
+              'hidden-xs': !headCtrl.navVisible, 
+              'hidden-sm': !headCtrl.navVisible, 
+             }"
+             data-ng-click="headCtrl.navVisible = false"
+        >
+          <ul class="fm-Nav-list">
+          
+            <li class="fm-Nav-item"
+                ui-sref-active="is-active"
+            >
+              <a class="fm-Nav-link"
+                 ui-sref="portfolio"
+              >portfolio</a>
+            </li>
+            
+            <li class="fm-Nav-item"
+                ui-sref-active="is-active"
+            >
+              <a class="fm-Nav-link"
+                 ui-sref="blog.list"
+              >blog</a>
+            </li> 
+            
+            
+            <li class="fm-Nav-item"
+                ui-sref-active="is-active"
+            >
+              <a class="fm-Nav-link"
+                 ui-sref="about"
+              >about</a>
+            </li>
+            
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
@@ -64,48 +106,10 @@
   
   
   
-  <div class="fm-Nav-screen"
-       data-ng-click="headCtrl.toggleNavVisibility()"
-  ></div>
+  
   <!-- NAVBAR -->
   <!-- <fm-navbar></fm-navbar> -->
-  <nav class="fm-Nav"
-       id="fm-Nav"
-       data-ng-class="{ 
-        'hidden-xs': !headCtrl.navVisible, 
-        'hidden-sm': !headCtrl.navVisible, 
-       }"
-       data-ng-click="headCtrl.navVisible = false"
-  >
-    <ul class="fm-Nav-list">
-    
-      <li class="fm-Nav-item"
-          ui-sref-active="is-active"
-      >
-        <a class="fm-Nav-link"
-           ui-sref="portfolio"
-        >portfolio</a>
-      </li>
-      
-      <li class="fm-Nav-item"
-          ui-sref-active="is-active"
-      >
-        <a class="fm-Nav-link"
-           ui-sref="blog.list"
-        >blog</a>
-      </li> 
-      
-      
-      <li class="fm-Nav-item"
-          ui-sref-active="is-active"
-      >
-        <a class="fm-Nav-link"
-           ui-sref="about"
-        >about</a>
-      </li>
-      
-    </ul>
-  </nav>
+  
     
   
   

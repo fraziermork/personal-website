@@ -14,7 +14,7 @@
     display:        flex;
     flex-direction: row; 
     align-items:    center;
-    height:         $headerSmHeight;
+    height:         $headerLgHeight;
   }
   .fm-Logo {
     display:     inline-block;
@@ -42,7 +42,7 @@
     
     position:  fixed;
     bottom:    0;
-    right:     0;
+    right:     $lgGutter;
     font-size: .75em;
     
     .fm-Nav-list {
@@ -54,7 +54,7 @@
     .fm-Nav-item {
       display: block;
       float:   none;
-      margin:  $lgGutter $medGutter;
+      margin:  0 $medGutter;
       
       &:first-of-type {
         
@@ -95,7 +95,11 @@
       width:            $navBarWidth;
       background-color: white;
       top:              0;
+      right:            0;
       
+      .fm-Nav-item {
+        margin:  $lgGutter $medGutter;
+      }
     }
     
   }
@@ -105,9 +109,12 @@
   
   // Desktop 
   @media (min-width: $screen-md-min) {
-    
-    box-sizing:     border-box;
-    transition:     all 1s ease-out;
+    position:   fixed;
+    top:        0;
+    left:       0;
+    right:      0;
+    box-sizing: border-box;
+    // transition:     all 1s ease-out;
 
     .fm-Header-wrapper {
       height: $headerLgHeight;
@@ -115,16 +122,16 @@
 
     // Class only relevant above breakpoint
     &.is-small {
-      position:   fixed;
-      top:        0;
-      left:       0;
-      right:      0;
+      // position:   fixed;
+      // top:        0;
+      // left:       0;
+      // right:      0;
       box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
       
       .fm-Header-wrapper {
         // TODO: look into how to do a smooth shrinking header 
-        height:     $headerSmHeight;
-        transition: all .25s ease-out;
+        // height:     $headerSmHeight;
+        // transition: all .25s ease-out;
       }
     }
     
@@ -144,6 +151,7 @@
     .fm-Nav {
       display:   block;
       position:  absolute;
+      margin-bottom: $medGutter;
       
       .fm-Nav-list {
         
@@ -154,7 +162,7 @@
         float:   right;
         
         &:first-of-type {
-          margin-right: $headerGutter;
+          // margin-right: $headerGutter;
         }
       }
       

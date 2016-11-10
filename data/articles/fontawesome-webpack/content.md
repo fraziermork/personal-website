@@ -29,7 +29,7 @@ This tells webpack to load those filetypes with the [url-loader](https://www.npm
 
  Even with this loader, I get an error with a require statement like this in my sass files: 
 
-```scss 
+```css
 @import '~font-awesome/scss/font-awesome';
 ```
 
@@ -144,9 +144,39 @@ module.exports = {
 };
 ```
 
-For reference, here are the relevant dependencies from my package.json file for the webpack 2 part. 
+For reference, I am using these packages: 
 
-```json 
+```javascript 
+{
+  "dependencies": {
+      "css-loader": "^0.25.0",
+      "file-loader": "^0.9.0",
+      "font-awesome": "^4.7.0",
+      "node-sass": "^3.11.2",
+      "resolve-url-loader": "^1.6.0",
+      "sass-loader": "^4.0.2",
+      "style-loader": "^0.13.1",
+      "url-loader": "^0.5.7",
+      "webpack": "^2.1.0-beta.25"
+  }
+}
+```
+
+
+
+
+<!-- For reference, I am using: 
+  * css-loader:   ^0.25.0,
+  * file-loader:  ^0.9.0,
+  * font-awesome: ^4.7.0,
+  * node-sass:    ^3.11.2,
+  * sass-loader:  ^4.0.2,
+  * style-loader: ^0.13.1,
+  * url-loader:   ^0.5.7,
+  * webpack:      ^2.1.0-beta.25 -->
+
+
+<!-- ```JSON 
 "dependencies": {
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
@@ -156,6 +186,6 @@ For reference, here are the relevant dependencies from my package.json file for 
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^2.1.0-beta.25",
-  }
-```
+    "webpack": "^2.1.0-beta.25"
+}
+``` -->

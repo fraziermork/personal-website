@@ -5,10 +5,11 @@
     .directive('fmHeader', [
       '$log', 
       '$window', 
+      '$timeout',
       fmHeader, 
     ]);
   
-  function fmHeader($log, $window) {
+  function fmHeader($log, $window, $timeout) {
     return {
       template:     template, 
       restrict:     'E', 
@@ -16,29 +17,40 @@
       controllerAs: 'headCtrl', 
       
       link(scope, elem, attrs, ctrl) {
-        angular.element($window).on('scroll', shrinkHeaderOnScroll);
+        const ngWindow        = angular.element($window);
+        const headerElement   = elem.find('header');
+        const fmHeaderWrapper = headerElement.find('section');
+        
+        // Run immediately to set initial header size, then attach to scroll events to handle resizes 
+        ngWindow.on('scroll', shrinkHeaderOnScroll);
+        $timeout(shrinkHeaderOnScroll);
         
         function shrinkHeaderOnScroll() {
-          // $log.debug('shrinkHeaderOnScroll', this.pageYOffset);
-          
-          // Check if need to shrink the header
-          if (this.pageYOffset < ctrl.scrollPosToShrinkHeaderAt) {
-            // $log.warn('growing header');
+          // Check if need to shrink the header 
+          if (ngWindow[0].pageYOffset < ctrl.maxHeaderHeight) {
+            let headerHeight = ctrl.maxHeaderHeight - ngWindow[0].pageYOffset;
+            if (headerHeight > ctrl.minHeaderHeight) {
+              fmHeaderWrapper.css('height', `${headerHeight}px`);
+            } else {
+              fmHeaderWrapper.css('height', `${ctrl.minHeaderHeight}px`);
+            }
+            
+            // If it's less than maxHeaderHeight, it's not small anymore 
             scope.$apply(() => {
               ctrl.headerIsSmall = false;
             });
-
-          // Remove the class when they scroll up   
-          } else if (ctrl.headerIsSmall === false) {
-            // $log.warn('shrinking header');
-            scope.$apply(() => {
-              ctrl.headerIsSmall = true;
-            });
+          
+          // They have scrolled past max header height 
+          } else {
+            fmHeaderWrapper.css('height', `${ctrl.minHeaderHeight}px`);
+            if (!ctrl.headerIsSmall) {
+              scope.$apply(() => {
+                ctrl.headerIsSmall = true;
+              });
+            }
           }
         }
-        
       }, 
-      
     };
   }
   

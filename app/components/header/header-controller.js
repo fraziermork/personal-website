@@ -6,12 +6,12 @@
     ]);
   
   function HeaderController($log) {
-    const vm                     = this;
-    vm.scrollPosToShrinkHeaderAt = 200;
-    vm.headerIsSmall             = false;
-    vm.navVisible                = false;
-    
-    vm.toggleNavVisibility       = toggleNavVisibility;
+    const vm               = this;
+    vm.maxHeaderHeight     = 300;
+    vm.minHeaderHeight     = 60;
+    vm.headerIsSmall       = false;
+    vm.navVisible          = false;
+    vm.toggleNavVisibility = toggleNavVisibility;
   
     
     function toggleNavVisibility() {

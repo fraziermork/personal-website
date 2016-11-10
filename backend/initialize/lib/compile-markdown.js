@@ -27,7 +27,7 @@ const md = new MarkdownIt({
   }, 
 });
 
-md.use(mdContainer, 'codeblock', {
+md.use(mdContainer, 'tonicCodeBlock', {
   render(tokens, idx, _options, env, self) {
     debug('inside mdContainer render');
     // debug(tokens[idx]);

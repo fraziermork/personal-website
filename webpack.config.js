@@ -50,7 +50,6 @@ module.exports = {
     ], 
     bundle: [
       'bootstrap-loader/extractStyles',
-      'bootstrap-loader',
       PATHS.entry,
     ]
   }, 
