@@ -16,7 +16,7 @@
     
     function toggleNavVisibility() {
       vm.navVisible = !vm.navVisible;
-      $log.debug('HeaderController toggleNavVisibility, visibility: ', vm.navVisible);
+      // if (__DEVONLY__) $log.debug('HeaderController toggleNavVisibility, visibility: ', vm.navVisible);
     }
   }
   

@@ -18,7 +18,7 @@
         resolve: { 
           articleList: ['$log', 'articleManager', 
             function(    $log,   articleManager) {
-              $log.debug('attempting to resolve articles');
+              if (__DEVONLY__) $log.debug('attempting to resolve articles');
               return articleManager.getAllArticles();
             }], 
         }, 
@@ -43,7 +43,7 @@
         resolve: {
           article: ['$log', '$stateParams', 'articleManager', 
             function($log,   $stateParams,   articleManager) {
-              $log.debug(`attempting to resolve article with id ${$stateParams.articleUrl}`);
+              if (__DEVONLY__) $log.debug(`attempting to resolve article with id ${$stateParams.articleUrl}`);
               return articleManager.getArticleByUrl($stateParams.articleUrl);
             }
           ], 

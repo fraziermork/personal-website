@@ -11,7 +11,7 @@
     return {
       pending: false, 
       email(emailData) {
-        $log.debug('contactMe email');
+        if (__DEVONLY__) $log.debug('contactMe email');
         if (this.pending) return;
         
         this.pending = true;
@@ -20,11 +20,11 @@
             
           })
             .then((res) => {
-              $log.log('contactMe email', res);
+              if (__DEVONLY__) $log.debug('contactMe email', res);
               
             })
             .catch((err) => {
-              $log.err('contactMe email', err);
+              if (__DEVONLY__) $log.err('contactMe email', err);
               
             });
         });

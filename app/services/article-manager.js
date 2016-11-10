@@ -1,4 +1,4 @@
-/* global __API_URL__ */
+/* global __API_URL__ __DEVONLY__ */
 
 const baseUrl = `${__API_URL__}/articles`;
 
@@ -24,15 +24,15 @@ const baseUrl = `${__API_URL__}/articles`;
        * @return {promise}  A promise that resolves with an array of all articles or rejects with a server error        
        */       
       getAllArticles() {
-        $log.debug('articleManager getAllArticles');
+        if (__DEVONLY__) $log.debug('articleManager getAllArticles');
         return $q((resolve, reject) => {
           $http.get(baseUrl)
             .then((res) => {
-              $log.debug('successfully retrieved articles: \n', res.data);
+              if (__DEVONLY__) $log.debug('successfully retrieved articles: \n', res.data);
               return resolve(res.data);
             })
             .catch((err) => {
-              $log.error('error retrieving articles! \n', err);
+              if (__DEVONLY__) $log.error('error retrieving articles! \n', err);
               return reject(err);
             });
         });
@@ -51,11 +51,11 @@ const baseUrl = `${__API_URL__}/articles`;
         return $q((resolve, reject) => {
           $http.get(`${baseUrl}/${articleUrl}`)
             .then((res) => {
-              $log.debug('successfully retrieved article: \n', res.data);
+              if (__DEVONLY__) $log.debug('successfully retrieved article: \n', res.data);
               return resolve(res.data);
             })
             .catch((err) => {
-              $log.error('error retrieving article! \n', err);
+              if (__DEVONLY__) $log.error('error retrieving article! \n', err);
               return reject(err);
             });
         });

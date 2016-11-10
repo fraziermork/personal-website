@@ -21,7 +21,7 @@
       },
       
       link(scope, element, attrs, ctrl) {
-        $log.log(`rendering article ${ctrl.article.title}`);
+        if (__DEVONLY__) $log.debug(`rendering article ${ctrl.article.title}`);
         
         // Compile html of article to trigger the code block directive embedded inside 
         let textToGoInsideArticle = ctrl.article.content;
