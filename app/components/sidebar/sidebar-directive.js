@@ -6,23 +6,7 @@
     '$log',
     fmSidebar,
   ]);
-  // .config([
-  //   '$uiViewScrollProvider',
-  //   configUiViewScrollProvider,
-  // ])
-  // .run([
-  //   '$anchorScroll',
-  //   configAnchorScrollYOffset,
-  // ]);
-  // 
-  // function configUiViewScrollProvider($uiViewScrollProvider) {
-  //   $uiViewScrollProvider.useAnchorScroll();
-  // }
-  // 
-  // function configAnchorScrollYOffset($anchorScroll) {
-  //   $anchorScroll.yOffset = 100;
-  // }
-  // 
+   
   function fmSidebar($log) {
     return {
       template, 
@@ -35,11 +19,6 @@
         articles: '=',
         article:  '=',
       }, 
-      // link(scope, elem, attrs, ctrl) {
-      //   
-      //   
-      //   
-      // }, 
     };  
   }
   

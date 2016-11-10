@@ -36,16 +36,15 @@
             }
             
             // If it's less than maxHeaderHeight, it's not small anymore 
-            scope.$digest(() => {
+            scope.$apply(() => {
               ctrl.headerIsSmall = false;
             });
           
-          // They have scrolled past  
+          // They have scrolled past max header height 
           } else {
             fmHeaderWrapper.css('height', `${ctrl.minHeaderHeight}px`);
-            
-            if (ctrl.headerIsSmall === false) {
-              scope.$digest(() => {
+            if (!ctrl.headerIsSmall) {
+              scope.$apply(() => {
                 ctrl.headerIsSmall = true;
               });
             }

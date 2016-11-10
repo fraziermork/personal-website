@@ -14,11 +14,13 @@
   .config([
     '$stateProvider', 
     '$urlRouterProvider',
+    '$anchorScrollProvider',
     fmAppConfig,
   ]);
   
-  function fmAppConfig($stateProvider, $urlRouterProvider) {
+  function fmAppConfig($stateProvider, $urlRouterProvider, $anchorScrollProvider) {
     $urlRouterProvider.otherwise('/portfolio');
+    $anchorScrollProvider.disableAutoScrolling();
   }
   
 })();

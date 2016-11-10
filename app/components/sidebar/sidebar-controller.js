@@ -13,24 +13,13 @@
       '$uiViewScrollProvider',
       configUiViewScrollProvider,
     ]);
-    // .run([
-    //   '$log',
-    //   '$anchorScroll',
-    //   '$document', 
-    //   configAnchorScrollYOffset,
-    // ]);
     
   function configUiViewScrollProvider($uiViewScrollProvider) {
     $uiViewScrollProvider.useAnchorScroll();
   }
   
-  // function configAnchorScrollYOffset($log, $anchorScroll, $document) {
-  //   $log.log($document.find('header'));
-  //   $anchorScroll.yOffset = 1000;
-  // }
-  
   function SidebarController($log, $scope, $anchorScroll, $document) {
-    // Configure $anchorScroll.yOffset
+    // Configure $anchorScroll.yOffset to be equal to the height of the header element
     $anchorScroll.yOffset = $document.find('header');
     
     const vm                            = this;

@@ -1,7 +1,7 @@
 {
   "name": "personal-website",
   "version": "0.1.0",
-  "description": "This is a portfolio page I built to showcase my skills as a developer.",
+  "description": "Frazier Mork's Portfolio",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./backend/test/email-test.js",
