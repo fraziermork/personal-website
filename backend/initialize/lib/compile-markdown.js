@@ -45,8 +45,8 @@ md.use(mdContainer, 'tonicCodeBlock', {
       tokens[idx].attrPush(['data-code', tokens[idx + 1].content]);
       
       // Hide the code block that would exist inside of it. This removes the content to prevent duplication, but directive will have to delete the pre tags that markdown-it will insert anyway
-      tokens[idx + 1].hidden = true;
-      tokens[idx + 1].content = '';
+      // tokens[idx + 1].hidden = true;
+      // tokens[idx + 1].content = '';
       // debug(tokens[idx + 1]);
     }
 
