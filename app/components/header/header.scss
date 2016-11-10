@@ -42,7 +42,7 @@
     
     position:  fixed;
     bottom:    0;
-    right:     0;
+    right:     $lgGutter;
     font-size: .75em;
     
     .fm-Nav-list {
@@ -54,7 +54,7 @@
     .fm-Nav-item {
       display: block;
       float:   none;
-      margin:  $lgGutter $medGutter;
+      margin:  0 $medGutter;
       
       &:first-of-type {
         
@@ -95,7 +95,11 @@
       width:            $navBarWidth;
       background-color: white;
       top:              0;
+      right:            0;
       
+      .fm-Nav-item {
+        margin:  $lgGutter $medGutter;
+      }
     }
     
   }
@@ -147,6 +151,7 @@
     .fm-Nav {
       display:   block;
       position:  absolute;
+      margin-bottom: $medGutter;
       
       .fm-Nav-list {
         
@@ -157,7 +162,7 @@
         float:   right;
         
         &:first-of-type {
-          margin-right: $headerGutter;
+          // margin-right: $headerGutter;
         }
       }
       
